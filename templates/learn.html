@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
+
+<script>
+    let arr = []
+    function play() {
+        var audio = new Audio('/static/crash_cymbal.mp3');
+        console.log(arr)
+        arr.push(0)
+        audio.play();
+    }
+    // $('area').mapster('select');
+    // $("area").data('maphilight')
+    
+    
+    
+</script>
+
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <div class="subtitle">Please try all of them. Then you can start the quiz.</div>
+        <img src="/static/drumkit.png" class="drumkit" usemap="#mymap" id="drum">
+        <map name="mymap">
+            <area shape="circle" coords="136,224,64" href="#" onclick="play()" id="crash1">
+            <area shape="circle" coords="270,120,75" href="#" onclick="play()" id="crash2">
+            <area shape="circle" coords="672,200,104" href="#" onclick="play()" id="crash3">
+            <area shape="circle" coords="240,300,64" href="#" onclick="play()" id="drum1">
+            <area shape="circle" coords="360,224,40" href="#" onclick="play()" id="drum2">
+            <area shape="circle" coords="510,248,48" href="#" onclick="play()" id="drum3">
+            <area shape="circle" coords="416,400,80" href="#" onclick="play()" id="drum4">
+            <area shape="circle" coords="600,440,84" href="#" onclick="play()" id="drum5">
+            
+
+
+            
+        </map>
+    </div>
+    <div class="col-1"></div>
+
+</div>
+
+
+
+
+
+{% endblock %}
