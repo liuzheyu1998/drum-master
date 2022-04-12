@@ -8,6 +8,26 @@ data = {
         "id": "1", 
         "audio": "/static/crash_cymbal.mp3", 
         "answer":[1,2,3]
+    },
+    "2":{
+        "id": "2", 
+        "audio": "/static/crash_cymbal.mp3", 
+        "answer":[1,2,3]
+    },
+    "3":{
+        "id": "3", 
+        "audio": "/static/crash_cymbal.mp3", 
+        "answer":[1,2,3]
+    },
+    "4":{
+        "id": "4", 
+        "audio": "/static/crash_cymbal.mp3", 
+        "answer":[1,2,3]
+    },
+    "5":{
+        "id": "5", 
+        "audio": "/static/crash_cymbal.mp3", 
+        "answer":[1,2,3]
     }
 }
 @app.route('/learn')
