@@ -1,0 +1,34 @@
+
+.drumkit{
+    width: 860px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.subtitle{
+    background-color: skyblue;
+    font-size: 17pt;
+    margin-left: 22pt;
+    margin-left: 20pt;
+}
+.accentColor{
+    background-color: red;
+}
+.bold{
+    font-weight: bold;
+    
+}
+.large{
+    font-size:14pt;
+}
+.lightgray{
+    color:lightgray;
+    
+}
+.audio-button{
+    width:25px;
+    height:25px;
+}
+.padding10px{
+    padding: 10px;
+}
