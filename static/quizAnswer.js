@@ -1,50 +1,54 @@
 let arr = []
+function playQuestion() {
+    var audio = new Audio('/static/crash_cymbal.mp3');
+    audio.play();
+}
 function play1() {
     var audio = new Audio('/static/crash_cymbal.mp3');
-    arr.push(1)
+    arr.push(0)
     
     audio.play();
     console.log(arr)
 }
 function play2() {
     var audio = new Audio('/static/crash_cymbal.mp3');
-    arr.push(2)
+    arr.push(1)
     audio.play();
     console.log(arr)
 }
 function play3() {
     var audio = new Audio('/static/crash_cymbal.mp3');
-    arr.push(3)
+    arr.push(2)
     audio.play();
     console.log(arr)
 }
 function play4() {
     var audio = new Audio('/static/crash_cymbal.mp3');
-    arr.push(4)
+    arr.push(3)
     audio.play();
     console.log(arr)
 }
 function play5() {
     var audio = new Audio('/static/crash_cymbal.mp3');
-    arr.push(5)
+    arr.push(4)
     audio.play();
     console.log(arr)
 }
 function play6() {
     var audio = new Audio('/static/crash_cymbal.mp3');
-    arr.push(6)
+    arr.push(5)
     audio.play();
     console.log(arr)
 }
 function play7() {
     var audio = new Audio('/static/crash_cymbal.mp3');
-    arr.push(7)
+    arr.push(6)
     audio.play();
     console.log(arr)
 }
 function play8() {
     var audio = new Audio('/static/crash_cymbal.mp3');
-    arr.push(8)
+    arr.push(7)
     audio.play();
     console.log(arr)
 }
@@ -105,6 +109,10 @@ function displayAnswer(){
     }
 }
 $(document).ready(function(){
+    
+    let answerTitle = "Question "+data["id"]+" answer: please follow the arrows to replicate the tempo"
+    $("#answerTitle").html(answerTitle)
+
     displayAnswer()
     $("#next").click(function(){ 
         let next_id = parseInt(data["id"])+1
