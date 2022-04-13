@@ -1,5 +1,4 @@
 let arr = []
-
 function play1() {
     var audio = new Audio('/static/crash_cymbal.mp3');
     arr.push(1)
@@ -53,8 +52,8 @@ function submit(cur_score){
     let data_to_save = {
         "score": cur_score+1,
     }
-    id = parseInt(data["id"])
-    new_url = "/quizresult/"+id.toString()
+    id = parseInt(data["id"])+1
+    new_url = "/quiz/"+id.toString()
 
     console.log(id)
     $.ajax({
@@ -81,22 +80,46 @@ function submit(cur_score){
 
 
 }
+function displayAnswer(){
+    let answer = data["answer"]
+    let ids = ["crush1", "crush2", "crush3", "drum1", "drum2", "drum3", "drum4", "drum5"]
+    // console.log("here")
+    // let i = 0;
+    // let ans = answer[i]
+    // let drum_ele = "#"+ids[ans]
+    let arrow = "#"+ids[answer[0]]+"arrow"
+    $(arrow).removeClass("hidden")
+    for (let i = 0; i < answer.length; i++) { 
+        let ans = answer[i]
+        let drum_ele = "#"+ids[ans]
+        let new_arrow = drum_ele+"arrow"
+        
+        $(drum_ele).click(function(){
+            $(new_arrow).addClass("hidden")
+            let next_ans = answer[i+1]
+            let next_arrow = "#"+ids[next_ans]+"arrow"
+            $(next_arrow).removeClass("hidden")
 
+        })
+        
+    }
+}
 $(document).ready(function(){
-    cur_score = score["score"]
-    console.log(cur_score)
-    
-    
-    $("#submit").click(function(){   
-        console.log(cur_score)
-                   
-        submit(cur_score)
+    displayAnswer()
+    $("#next").click(function(){ 
+        let next_id = parseInt(data["id"])+1
+        if(next_id <= 5){
+            let next_url = "/quiz/"+next_id
+            window.location.href=next_url
+
+        }
+        
+
+
 
         
     })
-
-
-   
+    
 
 
 })

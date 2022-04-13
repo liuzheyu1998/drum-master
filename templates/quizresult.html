@@ -1,17 +1,11 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'quizresult.js') }}"></script>
 
 <script>
     let data = {{data|tojson}} 
     console.log(data)
-    let score = {{score|tojson}} 
-    console.log(score)
-    
-    
-    
-    
     
 </script>
 
@@ -29,9 +23,9 @@
         <div class="quizAnswer">
             <img src="/static/drumkit.png" class="drumkit" usemap="#mymap" id="drum">
             <map name="mymap">
-                <area shape="circle" coords="136,224,64" href="#" onclick="play1()" id="crash1">
-                <area shape="circle" coords="270,120,75" href="#" onclick="play2()" id="crash2">
-                <area shape="circle" coords="672,200,104" href="#" onclick="play3()" id="crash3">
+                <area shape="circle" coords="136,224,64" href="#" onclick="play1()" id="crush1">
+                <area shape="circle" coords="270,120,75" href="#" onclick="play2()" id="crush2">
+                <area shape="circle" coords="672,200,104" href="#" onclick="play3()" id="crush3">
                 <area shape="circle" coords="240,300,64" href="#" onclick="play4()" id="drum1">
                 <area shape="circle" coords="360,224,40" href="#" onclick="play5()" id="drum2">
                 <area shape="circle" coords="510,248,48" href="#" onclick="play6()" id="drum3">
@@ -39,36 +33,23 @@
                 <area shape="circle" coords="600,440,84" href="#" onclick="play8()" id="drum5">
 
             </map>
+            <img src="/static/arrow.png" class="arrow1 hidden" id="crush1arrow"> 
+            <img src="/static/arrow.png" class="arrow2 hidden" id="crush2arrow">
+            <img src="/static/arrow.png" class="arrow3 hidden" id="crush3arrow">
+            <img src="/static/arrow.png" class="arrow4 hidden" id="drum1arrow">
+            <img src="/static/arrow.png" class="arrow5 hidden" id="drum2arrow">
+            <img src="/static/arrow.png" class="arrow6 hidden" id="drum3arrow">
+            <img src="/static/arrow.png" class="arrow7 hidden" id="drum4arrow">
+            <img src="/static/arrow.png" class="arrow8 hidden" id="drum5arrow">
             
             
 
         </div>
+        
         
     </div>
     <div class="col-1">
-        <br>
-        <br>
-        <br>
-        <br>
-        <div>
-            <button type="button" id="clear">Clear</button>
-
-        </div>
-        <br>
-        <br>
-        <div>
-            <button type="button" id="submit">Submit</button>
-
-        </div>
-        <br>
-        <br>
-        <div>
-            <button type="button" id="next" class="hidden">Next</button>
-
-        </div>
-        
-        
-        
+        <button type="button" id="next" >Next</button>
     </div>
 
 </div>

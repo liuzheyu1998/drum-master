@@ -7,7 +7,7 @@ data = {
     "1":{
         "id": "1", 
         "audio": "/static/crash_cymbal.mp3", 
-        "answer":[1,2,3]
+        "answer":[0,1,2,3]
     },
     "2":{
         "id": "2", 
@@ -30,6 +30,7 @@ data = {
         "answer":[1,2,3]
     }
 }
+score = {"score":0}
 @app.route('/learn')
 def learn(id=None):
     return render_template('learn.html') 
@@ -45,9 +46,20 @@ def welcome():
 
 @app.route('/quiz/<id>')
 def quiz(id=None):
-    return render_template('quiz.html', data=data[id]) 
+    print(score)
 
+    return render_template('quiz.html', data=data[id], score=score) 
 
+@app.route('/quizresult/<id>')
+def quizresult(id=None):
+    return render_template('quizresult.html', data=data[id], score=score) 
+
+@app.route('/submitAnswer', methods = ['GET', 'POST'])
+def submitAnswer():
+    json_data = request.get_json()   
+    print(json_data)
+    score["score"] = json_data["score"]
+    return {"h": 123}
 
 if __name__ == '__main__':
    app.run(debug = True)
