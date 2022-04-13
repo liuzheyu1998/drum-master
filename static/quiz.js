@@ -1,5 +1,8 @@
 let arr = []
-
+function playQuestion() {
+    var audio = new Audio('/static/crash_cymbal.mp3');
+    audio.play();
+}
 function play1() {
     var audio = new Audio('/static/crash_cymbal.mp3');
     arr.push(0)
@@ -57,6 +60,7 @@ function submit(cur_score){
     let data_to_save = {
         "score": cur_score,
     }
+    console.log("here")
     if (arraysEqual(arr, data["answer"])){
         data_to_save["score"] += 1
 
@@ -100,13 +104,13 @@ $(document).ready(function(){
     
     $("#submit").click(function(){   
         console.log(cur_score)
+        console.log("here")
                    
         submit(cur_score)
 
         
     })
     $("#clear").click(function(){   
-        
         arr=[]
         console.log(arr)
 
