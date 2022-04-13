@@ -59,16 +59,25 @@ function arraysEqual(a1,a2) {
 function submit(cur_score){
     let data_to_save = {
         "score": cur_score,
+        "id":data["id"],
+        "correct":false,
     }
     console.log("here")
     if (arraysEqual(arr, data["answer"])){
         data_to_save["score"] += 1
+        data_to_save["correct"] = "1"
+        
 
     }
+    else{
+        data_to_save["correct"] = "0"
+    }
+
     id = parseInt(data["id"])
     new_url = "/quizresult/"+id.toString()
 
     console.log(id)
+    let next_id = id+1
     $.ajax({
         type: "POST",
         url: "/submitAnswer",                
@@ -76,7 +85,15 @@ function submit(cur_score){
         contentType: "application/json; charset=utf-8",
         data : JSON.stringify(data_to_save),
         success: function(result){
-            window.location.href=new_url
+            
+            if(next_id <= 5){
+                let next_url = "/quiz/"+next_id
+                window.location.href=next_url
+    
+            }
+            else{
+                window.location.href="/quizfeedback"
+            }
             
 
         },
@@ -98,6 +115,7 @@ $(document).ready(function(){
     cur_score = score["score"]
     console.log(cur_score)
     let questionTitle = "Question "+data["id"]+": Please replicate the tempo"
+    
     console.log(questionTitle)
     $("#questionTitle").html(questionTitle)
     

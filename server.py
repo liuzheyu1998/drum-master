@@ -32,6 +32,14 @@ data = {
     }
 }
 score = {"score":0}
+isCorrect = {
+    "1": "0",
+    "2": "0",
+    "3": "0",
+    "4": "0",
+    "5": "0",
+
+}
 
 @app.route('/learn')
 def learn(id=None):
@@ -50,23 +58,26 @@ def welcome():
 def quiz(id=None):
     if id == "1":
         score["score"] = 0
+    
 
     return render_template('quiz.html', data=data[id], score=score) 
 
 @app.route('/quizresult/<id>')
 def quizresult(id=None):
-    return render_template('quizAnswer.html', data=data[id], score=score) 
+    return render_template('quizAnswer.html', data=data[id], score=score,) 
 
 @app.route('/quizfeedback')
 def quizFeedback():
 
-    return render_template('quizFeedback.html', score=score) 
+    return render_template('quizFeedback.html', score=score,  isCorrect=isCorrect) 
 
 @app.route('/submitAnswer', methods = ['GET', 'POST'])
 def submitAnswer():
     json_data = request.get_json()   
     print(json_data)
     score["score"] = json_data["score"]
+    isCorrect[json_data["id"]] = json_data["correct"]
+    print(isCorrect)
     return {"h": 123}
 
 if __name__ == '__main__':

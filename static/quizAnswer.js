@@ -114,19 +114,11 @@ $(document).ready(function(){
     $("#answerTitle").html(answerTitle)
 
     displayAnswer()
-    $("#next").click(function(){ 
-        let next_id = parseInt(data["id"])+1
-        if(next_id <= 5){
-            let next_url = "/quiz/"+next_id
-            window.location.href=next_url
-
-        }
-        else{
-            window.location.href="/quizfeedback"
-        }
+   
+    $("#back").click(function(){ 
         
-
-
+        window.location.href="/quizfeedback"
+        
 
         
     })

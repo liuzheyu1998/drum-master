@@ -5,8 +5,61 @@
 
 <script>
     let score = {{score|tojson}} 
+    let isCorrect = {{isCorrect|tojson}}
+    console.log(isCorrect) 
+
 
     
 </script>
 <div id="feedback">Hi</div>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-2">Question1</div>
+    <div class="col-2" id="q1-cor"></div>
+    <div class="col-2"><a class="" href="/quizresult/1">View Answer</a></div>
+    <div class="col-3"></div>
+
+
+</div>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-2">Question2</div>
+    <div class="col-2" id="q2-cor"></div>
+    <div class="col-2"><a class="" href="/quizresult/2">View Answer</a></div>
+    <div class="col-3"></div>
+
+
+</div>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-2">Question3</div>
+    <div class="col-2" id="q3-cor"></div>
+    <div class="col-2"><a class="" href="/quizresult/3">View Answer</a></div>
+    <div class="col-3"></div>
+
+
+</div>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-2">Question4</div>
+    <div class="col-2" id="q4-cor"></div>
+    <div class="col-2"><a class="" href="/quizresult/4">View Answer</a></div>
+    <div class="col-3"></div>
+
+
+</div>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-2">Question5</div>
+    <div class="col-2" id="q5-cor"></div>
+    <div class="col-2"><a class="" href="/quizresult/5">View Answer</a></div>
+    <div class="col-3"></div>
+
+
+</div>
+<button type="button" id="retry">Take quiz again</button>
+<button type="button" id="relearn">Learn the material again</button>
+
+
+
 {% endblock %}
