@@ -113,6 +113,9 @@ $(document).ready(function(){
             window.location.href=next_url
 
         }
+        else{
+            window.location.href="/quizfeedback"
+        }
         
 
 

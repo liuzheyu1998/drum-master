@@ -7,22 +7,22 @@ data = {
     "1":{
         "id": "1", 
         "audio": "/static/crash_cymbal.mp3", 
-        "answer":[0,1,2,3]
+        "answer":[7]
     },
     "2":{
         "id": "2", 
         "audio": "/static/crash_cymbal.mp3", 
-        "answer":[1,2,3]
+        "answer":[8]
     },
     "3":{
         "id": "3", 
         "audio": "/static/crash_cymbal.mp3", 
-        "answer":[1,2,3]
+        "answer":[4]
     },
     "4":{
         "id": "4", 
         "audio": "/static/crash_cymbal.mp3", 
-        "answer":[1,2,3]
+        "answer":[0,1,2,3]
     },
     "5":{
         "id": "5", 
@@ -46,13 +46,18 @@ def welcome():
 
 @app.route('/quiz/<id>')
 def quiz(id=None):
-    print(score)
+    if id == "1":
+        score["score"] = 0
 
     return render_template('quiz.html', data=data[id], score=score) 
 
 @app.route('/quizresult/<id>')
 def quizresult(id=None):
-    return render_template('quizresult.html', data=data[id], score=score) 
+    return render_template('quizAnswer.html', data=data[id], score=score) 
+
+@app.route('/quizfeedback')
+def quizFeedback():
+    return render_template('quizFeedback.html', score=score) 
 
 @app.route('/submitAnswer', methods = ['GET', 'POST'])
 def submitAnswer():
