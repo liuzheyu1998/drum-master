@@ -104,7 +104,7 @@ quiz = {
 
 @app.route('/learn')
 def learn(id=None):
-    return render_template('learn.html') 
+    return render_template('learn.html', drum_kit=drum_kit) 
 
 # @app.route('/edit/<id>')
 # def edit_data(id=None):
@@ -117,7 +117,7 @@ def welcome():
 
 @app.route('/quiz/<id>')
 def quiz(id=None):
-    return render_template('quiz.html', data=data[id]) 
+    return render_template('quiz.html', drum_kit=drum_kit) 
 
 
 
