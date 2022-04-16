@@ -75,33 +75,34 @@ drum_kit = {
     }
 }
 
-quiz = {
+data = {
     "1": {
         "id": "1",
         "audio_path": "/static/audio_quiz/quiz1.mp3",
-        "answer": [4]
+        "answer": ['4']
     },
     "2": {
         "id": "2",
         "audio_path": "/static/audio_quiz/quiz2.mp3",
-        "answer": [3]
+        "answer": ['3']
     },
     "3": {
         "id": "3",
         "audio_path": "/static/audio_quiz/quiz3.mp3",
-        "answer": [1, 1, 4, 1]
+        "answer": ['1', '1', '4', '1']
     },
     "4": {
         "id": "4",
         "audio_path": "/static/audio_quiz/quiz4.mp3",
-        "answer": [8, 4, 8, 8, 4]
+        "answer": ['8', '4', '8', '8', '4']
     },
     "5": {
         "id": "5",
         "audio_path": "/static/audio_quiz/quiz5.mp3",
-        "answer": [4, 4, 5, 5, 6, 6, 7, 7, 2]
+        "answer": ['4', '4', '5', '5', '6', '6', '7', '7', '2']
     }
 }
+
 score = {"score":0}
 answer = []
 correct_answer = [[1],[1],[1,2],[1],[3]]
@@ -132,10 +133,8 @@ def quiz(id=None):
     if id == "1":
         # score["score"] = 0
         answer.clear()
-    
-
     #return render_template('quiz.html', data=data[id], score=score) 
-    return render_template('quiz.html', drum_kit = drum_kit) 
+    return render_template('quiz.html', drum_kit = drum_kit, data = data[id]) 
 
 @app.route('/quizresult/<id>')
 def quizresult(id=None):
@@ -146,20 +145,22 @@ def quizresult(id=None):
 def quizFeedback():
     #Need to do some comparison over here
     score = 0
-    for i in range(len(answer)):
-        if answer[i] == correct_answer[i]:
+    print("This is answer",answer)
+    for i in range(1,len(answer)):
+        dex = i
+        print(answer[i],data[str(dex)]["answer"])
+        if answer[i-1] == data[str(dex)]["answer"]:
             score += 1
             index = i+1
-            isCorrect[str(index)] = 1
+            isCorrect[str(index-1)] = 1
     print("This is scoooore!",score)
     return render_template('quizFeedback.html', score=score,  isCorrect=isCorrect) 
 
 @app.route('/submitAnswer', methods = ['GET', 'POST'])
 def submitAnswer():
     json_data = request.get_json()   
-    print("this is data",json_data)
-    answer.append(json_data["answer"])
-    print(answer)
+    answer.append((json_data["answer"]))
+    print("testing answer",answer)
     # score["score"] = json_data["score"]
     # isCorrect[json_data["id"]] = json_data["correct"]
     # print(isCorrect)
