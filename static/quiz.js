@@ -4,7 +4,6 @@ function play() {
     let id = event.srcElement.id
     console.log("played " + drum_kit[id]["name"] + " (id=" + id + ")")
     let audio_path = new Audio(drum_kit[id]["audio_path"]);
-    arr.push(id)
     audio_path.play();
 }
 
@@ -136,7 +135,7 @@ $(document).ready(function(){
     // })
     // $("#clear").click(function(){   
     //     arr=[]
-     console.log(arr)
+    //     console.log(arr)
 
         
     // })
