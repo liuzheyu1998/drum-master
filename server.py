@@ -139,7 +139,7 @@ def quiz(id=None):
 @app.route('/quizresult/<id>')
 def quizresult(id=None):
     #pass in the array of answer.
-    return render_template('quizAnswer.html', data=data[id], score=score,) 
+    return render_template('quizAnswer.html', drum_kit = drum_kit, data = data[id]) 
 
 @app.route('/quizfeedback')
 def quizFeedback():
