@@ -32,6 +32,8 @@ data = {
     }
 }
 score = {"score":0}
+answer = []
+correct_answer = [[1],[0],[1,2],[1],[3]]
 isCorrect = {
     "1": "0",
     "2": "0",
@@ -57,27 +59,31 @@ def welcome():
 @app.route('/quiz/<id>')
 def quiz(id=None):
     if id == "1":
-        score["score"] = 0
+        # score["score"] = 0
+        answer.clear()
     
 
     return render_template('quiz.html', data=data[id], score=score) 
 
 @app.route('/quizresult/<id>')
 def quizresult(id=None):
+    #pass in the array of answer.
     return render_template('quizAnswer.html', data=data[id], score=score,) 
 
 @app.route('/quizfeedback')
 def quizFeedback():
-
+    #Need to do some comparison over here
     return render_template('quizFeedback.html', score=score,  isCorrect=isCorrect) 
 
 @app.route('/submitAnswer', methods = ['GET', 'POST'])
 def submitAnswer():
     json_data = request.get_json()   
-    print(json_data)
-    score["score"] = json_data["score"]
-    isCorrect[json_data["id"]] = json_data["correct"]
-    print(isCorrect)
+    print("this is data",json_data)
+    answer.append(json_data["answer"])
+    print(answer)
+    # score["score"] = json_data["score"]
+    # isCorrect[json_data["id"]] = json_data["correct"]
+    # print(isCorrect)
     return {"h": 123}
 
 if __name__ == '__main__':

@@ -61,22 +61,19 @@ function submit(cur_score){
         "score": cur_score,
         "id":data["id"],
         "correct":false,
+        "answer":""
     }
-    console.log("here")
-    if (arraysEqual(arr, data["answer"])){
-        data_to_save["score"] += 1
-        data_to_save["correct"] = "1"
-        
-
-    }
-    else{
-        data_to_save["correct"] = "0"
-    }
+    data_to_save["answer"] = arr
+    // if (arraysEqual(arr, data["answer"])){
+    //     data_to_save["score"] += 1
+    //     data_to_save["correct"] = "1"
+    // }
+    // else{
+    //     data_to_save["correct"] = "0"
+    // }
 
     id = parseInt(data["id"])
     new_url = "/quizresult/"+id.toString()
-
-    console.log(id)
     let next_id = id+1
     $.ajax({
         type: "POST",
