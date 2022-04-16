@@ -33,7 +33,7 @@ data = {
 }
 score = {"score":0}
 answer = []
-correct_answer = [[1],[0],[1,2],[1],[3]]
+correct_answer = [[1],[1],[1,2],[1],[3]]
 isCorrect = {
     "1": "0",
     "2": "0",
@@ -73,6 +73,13 @@ def quizresult(id=None):
 @app.route('/quizfeedback')
 def quizFeedback():
     #Need to do some comparison over here
+    score = 0
+    for i in range(len(answer)):
+        if answer[i] == correct_answer[i]:
+            score += 1
+            index = i+1
+            isCorrect[str(index)] = 1
+    print("This is scoooore!",score)
     return render_template('quizFeedback.html', score=score,  isCorrect=isCorrect) 
 
 @app.route('/submitAnswer', methods = ['GET', 'POST'])
