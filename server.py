@@ -67,11 +67,12 @@ QUIZ = {
         "audio_path": "/static/audio_quiz/quiz4.mp3",
         "answer": [8, 4, 8, 8, 4]
     },
-    "5": {
-        "id": "5",
-        "audio_path": "/static/audio_quiz/quiz5.mp3",
-        "answer": [4, 4, 5, 5, 6, 6, 7, 7, 2]
-    }
+    # delete
+    # "5": {
+    #     "id": "5",
+    #     "audio_path": "/static/audio_quiz/quiz5.mp3",
+    #     "answer": [4, 4, 5, 5, 6, 6, 7, 7, 2]
+    # }
 }
 
 
