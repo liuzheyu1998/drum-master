@@ -137,3 +137,10 @@
     display: flex;
     
 }
+
+#welcome_background {
+    background-image: url('welcome_background.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
