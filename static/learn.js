@@ -49,10 +49,11 @@ function display_alert(str, id) {
 }
 
 function display_quiz() {
-    let div = $("<div class='vertical_center'></div>")
-    let btn_div = $("<button class='btn btn-info' type='button' ><a href='/quiz/1'>Quiz</button>")
-    div.append(btn_div)
-    $("#col_third").append(div)
+    // let div = $("<div class='vertical_center'></div>")
+    // let btn_div = $("<button class='btn btn-info' type='button' ><a href='/quiz/1'>Quiz</button>")
+    // div.append(btn_div)
+    // $("#col_third").append(div)
+    $("#quizbutton").removeClass("hidden")
 }
 
 function btn_alert1() {
@@ -75,4 +76,8 @@ $(document).ready(function(){
     display_alert("Try them all before the quiz.", "1")
 
     btn_alert1()
+    $("#quizbutton").click(function(){ 
+        window.location.href="/quiz/1"
+
+    })
 })

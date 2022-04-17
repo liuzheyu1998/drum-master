@@ -109,3 +109,31 @@
 
     visibility: hidden;
 }
+.alert-fixed {
+    position:fixed; 
+    top: 40%; 
+    left: 35%;
+    width: 600px;
+    height: 100px;
+    z-index: 9999; 
+    border-radius: 15px;
+    font-size: x-large;
+}
+
+.vertical_center {
+    position: fixed;
+    top: 50%
+}
+.feedbackTitle{
+    font-size: xx-large;
+    color: red;
+    font-weight: bold;
+    
+}
+.startButton{
+    font-size: xx-large;
+    font-weight: 800;
+    margin: auto;
+    display: flex;
+    
+}

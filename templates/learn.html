@@ -8,24 +8,7 @@
     var drum_kit = {{drum_kit|tojson}}
 </script>
 
-<style>
-.alert-fixed {
-    position:fixed; 
-    top: 40%; 
-    left: 35%;
-    width: 600px;
-    height: 100px;
-    z-index: 9999; 
-    border-radius: 15px;
-    font-size: x-large;
-}
 
-.vertical_center {
-    position: fixed;
-    top: 50%
-}
-
-</style>
 
 
 
@@ -47,9 +30,9 @@
         </map>
     </div>
     <div id = "col_third" class="col-1">
-        <!-- <div class="vertical_center">
-            <button class="btn btn-info" type="button">Quiz</button>
-        </div> -->
+        <div class="vertical_center">
+            <button class="btn btn-info hidden" type="button" id="quizbutton">Quiz</button>
+        </div>
     </div>
 </div>
 
