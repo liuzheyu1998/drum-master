@@ -4,12 +4,12 @@
 <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
 
 <script>
+
  
     var data = {{data|tojson}} 
     var drum_kit = {{drum_kit|tojson}} 
 
 
-    
     
 </script>
 
@@ -25,6 +25,7 @@
             </div>
 
         </div>
+
         <div class="quizAnswer">
             <img src="/static/drumkit.png" class="drumkit" usemap="#mymap" id="drum">
             <map name="mymap">
@@ -68,6 +69,7 @@
         
         
         
+
     </div>
 
 </div>

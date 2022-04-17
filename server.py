@@ -3,34 +3,7 @@ from flask import render_template, redirect
 from flask import Response, request, jsonify
 app = Flask(__name__)
 
-# data = {
-#     "1":{
-#         "id": "1", 
-#         "audio": "/static/crash_cymbal.mp3", 
-#         "answer":[7],
 
-#     },
-#     "2":{
-#         "id": "2", 
-#         "audio": "/static/crash_cymbal.mp3", 
-#         "answer":[6]
-#     },
-#     "3":{
-#         "id": "3", 
-#         "audio": "/static/crash_cymbal.mp3", 
-#         "answer":[4]
-#     },
-#     "4":{
-#         "id": "4", 
-#         "audio": "/static/crash_cymbal.mp3", 
-#         "answer":[0,1,2,3]
-#     },
-#     "5":{
-#         "id": "5", 
-#         "audio": "/static/crash_cymbal.mp3", 
-#         "answer":[1,2,3]
-#     }
-# }
 
 drum_kit = {
     "1": {
@@ -72,8 +45,15 @@ drum_kit = {
         "id": "8",
         "name": "bass_drum",
         "audio_path": "/static/audio_drum/bass_drum.mov"
+
     }
 }
+
+
+
+LEARN_INPUT = {}    # {id: [time1, time2, ...]}
+
+
 
 data = {
     "1": {
@@ -117,7 +97,23 @@ isCorrect = {
 
 @app.route('/learn')
 def learn(id=None):
-    return render_template('learn.html') 
+    global DRUM_KIT
+    global DRUM_PLAYED
+    global LEARN_INPUT
+
+    if request.method == "GET":
+        return render_template('learn.html', drum_kit=DRUM_KIT) 
+    if request.method == "POST":
+        
+        input = request.get_json()   # {"id": id, "time": }
+        id = input["id"]
+        if id in LEARN_INPUT:
+            LEARN_INPUT[input["id"]].append(input["time"])
+        else:
+            LEARN_INPUT[input["id"]] = [input["time"]]
+    
+    return jsonify(LEARN_INPUT)
+    
 
 # @app.route('/edit/<id>')
 # def edit_data(id=None):
@@ -140,6 +136,7 @@ def quiz(id=None):
 def quizresult(id=None):
     #pass in the array of answer.
     return render_template('quizAnswer.html', drum_kit = drum_kit, data = data[id]) 
+
 
 @app.route('/quizfeedback')
 def quizFeedback():
