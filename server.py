@@ -150,6 +150,14 @@ def quiz(id=None):
     if id == "1":
         # score["score"] = 0
         answer.clear()
+        isCorrect = {
+            "1": "0",
+            "2": "0",
+            "3": "0",
+            "4": "0",
+            "5": "0",
+
+        }
     #return render_template('quiz.html', data=data[id], score=score) 
     return render_template('quiz.html', drum_kit = drum_kit, data = data[id]) 
 
