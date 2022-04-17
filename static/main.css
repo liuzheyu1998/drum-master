@@ -1,15 +1,21 @@
+.quizAnswer{
+    margin-left: auto;
+    margin-right: auto;
+    position:relative
+}
 
 .drumkit{
     width: 860px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    /* display: block; */
+    position: relative;
+    z-index: 1;
+
+    
 }
 .subtitle{
     background-color: skyblue;
     font-size: 17pt;
-    margin-left: 22pt;
-    margin-left: 20pt;
+    
 }
 .accentColor{
     background-color: red;
@@ -31,4 +37,75 @@
 }
 .padding10px{
     padding: 10px;
+}
+
+
+.arrow1{
+    position: absolute;
+    top: 220px;
+    left: 10px;
+    width: 50px;
+    z-index: 10;
+
+}
+.arrow2{
+    position: absolute;
+    top: 100px;
+    left: 140px;
+    width: 50px;
+    z-index: 10;
+
+}
+.arrow3{
+    position: absolute;
+    top: 170px;
+    left: 500px;
+    width: 50px;
+    z-index: 10;
+
+}
+.arrow4{
+    position: absolute;
+    top: 280px;
+    left: 130px;
+    width: 50px;
+    z-index: 10;
+
+}
+.arrow5{
+    position: absolute;
+    top: 190px;
+    left: 260px;
+    width: 50px;
+    z-index: 10;
+
+}
+.arrow6{
+    position: absolute;
+    top: 220px;
+    left: 405px;
+    width: 50px;
+    z-index: 10;
+
+}
+
+.arrow7{
+    position: absolute;
+    top: 370px;
+    left: 275px;
+    width: 50px;
+    z-index: 10;
+
+}
+.arrow8{
+    position: absolute;
+    top: 390px;
+    left: 470px;
+    width: 50px;
+    z-index: 10;
+
+}
+.hidden{
+
+    visibility: hidden;
 }

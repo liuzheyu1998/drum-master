@@ -1,15 +1,11 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'quizAnswer.js') }}"></script>
 
 <script>
-
- 
     var data = {{data|tojson}} 
     var drum_kit = {{drum_kit|tojson}} 
-
-
     
 </script>
 
@@ -18,14 +14,13 @@
     <div class="col-10">
         <div class="subtitle">
             <div class="padding10px">
-                <span id="questionTitle">Question 1: Please replicate the tempo  </span>
+                <span id="answerTitle"></span>
                 
                 <input type="image" src="/static/audio-button.png" class="audio-button" OnClick="playQuestion()"/>
 
             </div>
 
         </div>
-
         <div class="quizAnswer">
             <img src="/static/drumkit.png" class="drumkit" usemap="#mymap" id="drum">
             <map name="mymap">
@@ -39,37 +34,29 @@
                 <area shape="circle" coords="600,440,84" href="#" onclick="play()" id="8">
 
             </map>
+            <img src="/static/arrow.png" class="arrow1 hidden" id="1arrow"> 
+            <img src="/static/arrow.png" class="arrow2 hidden" id="2arrow">
+            <img src="/static/arrow.png" class="arrow3 hidden" id="3arrow">
+            <img src="/static/arrow.png" class="arrow4 hidden" id="4arrow">
+            <img src="/static/arrow.png" class="arrow5 hidden" id="5arrow">
+            <img src="/static/arrow.png" class="arrow6 hidden" id="6arrow">
+            <img src="/static/arrow.png" class="arrow7 hidden" id="7arrow">
+            <img src="/static/arrow.png" class="arrow8 hidden" id="8arrow">
             
             
 
         </div>
+        
         
     </div>
     <div class="col-1">
         <br>
         <br>
-        <br>
-        <br>
-        <div>
-            <button type="button" id="clear">Clear</button>
 
-        </div>
-        <br>
-        <br>
-        <div>
-            <button type="button" id="submit">Submit</button>
 
-        </div>
-        <br>
-        <br>
-        <div>
-            <button type="button" id="next" class="hidden">Next</button>
-
-        </div>
+        <button type="button" id="back">Back</button>
         
-        
-        
-
+       
     </div>
 
 </div>

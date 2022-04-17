@@ -3,7 +3,9 @@ from flask import render_template, redirect
 from flask import Response, request, jsonify
 app = Flask(__name__)
 
-DRUM_KIT = {
+
+
+drum_kit = {
     "1": {
         "id": "1",
         "name": "hi_hat",
@@ -43,42 +45,57 @@ DRUM_KIT = {
         "id": "8",
         "name": "bass_drum",
         "audio_path": "/static/audio_drum/bass_drum.mov"
+
     }
 }
 
-QUIZ = {
-    "1": {
-        "id": "1",
-        "audio_path": "/static/audio_quiz/quiz1.mp3",
-        "answer": [4]
-    },
-    "2": {
-        "id": "2",
-        "audio_path": "/static/audio_quiz/quiz2.mp3",
-        "answer": [3]
-    },
-    "3": {
-        "id": "3",
-        "audio_path": "/static/audio_quiz/quiz3.mp3",
-        "answer": [1, 1, 4, 1]
-    },
-    "4": {
-        "id": "4",
-        "audio_path": "/static/audio_quiz/quiz4.mp3",
-        "answer": [8, 4, 8, 8, 4]
-    },
-    # delete
-    # "5": {
-    #     "id": "5",
-    #     "audio_path": "/static/audio_quiz/quiz5.mp3",
-    #     "answer": [4, 4, 5, 5, 6, 6, 7, 7, 2]
-    # }
-}
 
 
 LEARN_INPUT = {}    # {id: [time1, time2, ...]}
 
-@app.route('/learn', methods=["GET", "POST"])
+
+
+data = {
+    "1": {
+        "id": "1",
+        "audio_path": "/static/audio_quiz/quiz1.mp3",
+        "answer": ['4']
+    },
+    "2": {
+        "id": "2",
+        "audio_path": "/static/audio_quiz/quiz2.mp3",
+        "answer": ['3']
+    },
+    "3": {
+        "id": "3",
+        "audio_path": "/static/audio_quiz/quiz3.mp3",
+        "answer": ['1', '1', '4', '1']
+    },
+    "4": {
+        "id": "4",
+        "audio_path": "/static/audio_quiz/quiz4.mp3",
+        "answer": ['8', '4', '8', '8', '4']
+    },
+    "5": {
+        "id": "5",
+        "audio_path": "/static/audio_quiz/quiz5.mp3",
+        "answer": ['4', '4', '5', '5', '6', '6', '7', '7', '2']
+    }
+}
+
+score = {"score":0}
+answer = []
+correct_answer = [[1],[1],[1,2],[1],[3]]
+isCorrect = {
+    "1": "0",
+    "2": "0",
+    "3": "0",
+    "4": "0",
+    "5": "0",
+
+}
+
+@app.route('/learn')
 def learn(id=None):
     global DRUM_KIT
     global DRUM_PLAYED
@@ -109,9 +126,42 @@ def welcome():
 
 @app.route('/quiz/<id>')
 def quiz(id=None):
-    return render_template('quiz.html', drum_kit=DRUM_KIT) 
+    if id == "1":
+        # score["score"] = 0
+        answer.clear()
+    #return render_template('quiz.html', data=data[id], score=score) 
+    return render_template('quiz.html', drum_kit = drum_kit, data = data[id]) 
+
+@app.route('/quizresult/<id>')
+def quizresult(id=None):
+    #pass in the array of answer.
+    return render_template('quizAnswer.html', drum_kit = drum_kit, data = data[id]) 
 
 
+@app.route('/quizfeedback')
+def quizFeedback():
+    #Need to do some comparison over here
+    score = 0
+    print("This is answer",answer)
+    for i in range(1,len(answer)):
+        dex = i
+        print(answer[i],data[str(dex)]["answer"])
+        if answer[i-1] == data[str(dex)]["answer"]:
+            score += 1
+            index = i+1
+            isCorrect[str(index-1)] = 1
+    print("This is scoooore!",score)
+    return render_template('quizFeedback.html', score=score,  isCorrect=isCorrect) 
+
+@app.route('/submitAnswer', methods = ['GET', 'POST'])
+def submitAnswer():
+    json_data = request.get_json()   
+    answer.append((json_data["answer"]))
+    print("testing answer",answer)
+    # score["score"] = json_data["score"]
+    # isCorrect[json_data["id"]] = json_data["correct"]
+    # print(isCorrect)
+    return {"h": 123}
 
 if __name__ == '__main__':
    app.run(debug = True)
