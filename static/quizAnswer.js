@@ -21,7 +21,9 @@ function displayAnswer(id){
     count+=1
     let answer = data["answer"]
     console.log(id)
+    console.log(answer)
      let arrow = "#"+id+"arrow"
+     console.log(arrow)
      $(arrow).addClass("hidden")
 
     let next_arrow = "#"+answer[count]+"arrow"
@@ -32,6 +34,7 @@ $(document).ready(function(){
     
     let answerTitle = "Question "+data["id"]+" answer: please follow the arrows to replicate the tempo"
     $("#answerTitle").html(answerTitle)
+    console.log(data)
     let answer = data["answer"]
     let arrow = "#"+answer[0]+"arrow"
     // console.log(answer)

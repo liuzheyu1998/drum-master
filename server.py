@@ -158,6 +158,8 @@ def quiz(id=None):
             "5": "0",
 
         }
+        print(isCorrect)
+        
     #return render_template('quiz.html', data=data[id], score=score) 
     return render_template('quiz.html', drum_kit = drum_kit, data = data[id]) 
 
@@ -171,13 +173,15 @@ def quizFeedback():
     #Need to do some comparison over here
     score = 0
     print("This is answer",answer)
-    for i in range(1,len(answer)):
+    for i in range(1,len(answer)+1):
         dex = i
-        print(answer[i],data[str(dex)]["answer"])
+        print(i)
+        print("fb", answer[i-1],data[str(i)]["answer"])
         if answer[i-1] == data[str(dex)]["answer"]:
             score += 1
             index = i+1
             isCorrect[str(index-1)] = 1
+    print(answer)
     print("This is scoooore!",score)
     return render_template('quizFeedback.html', score=score,  isCorrect=isCorrect) 
 
