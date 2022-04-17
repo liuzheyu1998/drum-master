@@ -3,7 +3,7 @@ from flask import render_template, redirect
 from flask import Response, request, jsonify
 app = Flask(__name__)
 
-drum_kit = {
+DRUM_KIT = {
     "1": {
         "id": "1",
         "name": "hi_hat",
@@ -46,7 +46,7 @@ drum_kit = {
     }
 }
 
-quiz = {
+QUIZ = {
     "1": {
         "id": "1",
         "audio_path": "/static/audio_quiz/quiz1.mp3",
@@ -74,9 +74,28 @@ quiz = {
     }
 }
 
-@app.route('/learn')
+
+LEARN_INPUT = {}    # {id: [time1, time2, ...]}
+
+@app.route('/learn', methods=["GET", "POST"])
 def learn(id=None):
-    return render_template('learn.html', drum_kit=drum_kit) 
+    global DRUM_KIT
+    global DRUM_PLAYED
+    global LEARN_INPUT
+
+    if request.method == "GET":
+        return render_template('learn.html', drum_kit=DRUM_KIT) 
+    if request.method == "POST":
+        
+        input = request.get_json()   # {"id": id, "time": }
+        id = input["id"]
+        if id in LEARN_INPUT:
+            LEARN_INPUT[input["id"]].append(input["time"])
+        else:
+            LEARN_INPUT[input["id"]] = [input["time"]]
+    
+    return jsonify(LEARN_INPUT)
+    
 
 # @app.route('/edit/<id>')
 # def edit_data(id=None):
@@ -89,7 +108,7 @@ def welcome():
 
 @app.route('/quiz/<id>')
 def quiz(id=None):
-    return render_template('quiz.html', drum_kit=drum_kit) 
+    return render_template('quiz.html', drum_kit=DRUM_KIT) 
 
 
 
