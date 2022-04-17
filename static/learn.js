@@ -11,8 +11,7 @@ function play() {
 var alert_shown = false
 function save_learn_input(data) {
     $.ajax({
-        type: "POST",
-        // url: "learn",                
+        type: "POST",                
         dataType : "json",
         contentType: "application/json; charset=utf-8",
         // pass new_data to backend
