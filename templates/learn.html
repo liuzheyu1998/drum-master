@@ -7,6 +7,27 @@
     var drum_kit = {{drum_kit|tojson}}
 </script>
 
+<style>
+.alert-fixed {
+    position:fixed; 
+    top: 40%; 
+    left: 35%;
+    width: 600px;
+    height: 100px;
+    z-index: 9999; 
+    border-radius: 15px;
+    font-size: x-large;
+}
+
+.vertical_center {
+    position: fixed;
+    top: 50%
+}
+
+</style>
+
+
+
 <div class="row">
     <div class="col-1"></div>
     <div class="col-10">
@@ -24,8 +45,18 @@
                 
         </map>
     </div>
-    <div class="col-1"></div>
+    <div id = "col_third" class="col-1">
+        <!-- <div class="vertical_center">
+            <button class="btn btn-info" type="button">Quiz</button>
+        </div> -->
+    </div>
+</div>
 
+<div id="alert_section" class="m-4"> 
+    <!-- <div id="alert" class="alert alert-info alert-dismissible fade show alert-fixed">
+        <strong>Note!</strong>  Try them all before the quiz.
+        <button type="button" class="btn-close" id="btn_alert"></button>
+    </div> -->
 </div>
 
 
