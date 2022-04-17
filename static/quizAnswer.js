@@ -1,120 +1,46 @@
 let arr = []
+// function playQuestion() {
+//     var audio = new Audio('/static/crash_cymbal.mp3');
+//     audio.play();
+// }
+function play() {
+    let id = event.srcElement.id
+    //console.log("played " + drum_kit[id]["name"] + " (id=" + id + ")")
+    let audio_path = new Audio(drum_kit[id]["audio_path"]);
+    arr.push(id)
+    audio_path.play();
+}
 function playQuestion() {
-    var audio = new Audio('/static/crash_cymbal.mp3');
+    var audio = new Audio(data["audio_path"]);
     audio.play();
 }
-function play1() {
-    var audio = new Audio('/static/crash_cymbal.mp3');
-    arr.push(0)
-    
-    audio.play();
-    console.log(arr)
-}
-function play2() {
-    var audio = new Audio('/static/crash_cymbal.mp3');
-    arr.push(1)
-    audio.play();
-    console.log(arr)
-}
-function play3() {
-    var audio = new Audio('/static/crash_cymbal.mp3');
-    arr.push(2)
-    audio.play();
-    console.log(arr)
-}
-function play4() {
-    var audio = new Audio('/static/crash_cymbal.mp3');
-    arr.push(3)
-    audio.play();
-    console.log(arr)
-}
-function play5() {
-    var audio = new Audio('/static/crash_cymbal.mp3');
-    arr.push(4)
-    audio.play();
-    console.log(arr)
-}
-function play6() {
-    var audio = new Audio('/static/crash_cymbal.mp3');
-    arr.push(5)
-    audio.play();
-    console.log(arr)
-}
-function play7() {
-    var audio = new Audio('/static/crash_cymbal.mp3');
-    arr.push(6)
-    audio.play();
-    console.log(arr)
-}
-function play8() {
-    var audio = new Audio('/static/crash_cymbal.mp3');
-    arr.push(7)
-    audio.play();
-    console.log(arr)
-}
-function submit(cur_score){
-    let data_to_save = {
-        "score": cur_score+1,
-    }
-    id = parseInt(data["id"])+1
-    new_url = "/quiz/"+id.toString()
-
-    console.log(id)
-    $.ajax({
-        type: "POST",
-        url: "/submitAnswer",                
-        dataType : "json",
-        contentType: "application/json; charset=utf-8",
-        data : JSON.stringify(data_to_save),
-        success: function(result){
-            window.location.href=new_url
-            
-
-        },
-        error: function(request, status, error){
-            console.log("There is an Error");
-            console.log(request)
-            console.log(status)
-            console.log(error)
-        }
-    });
 
 
-        
-
-
-}
-function displayAnswer(){
+var count = 0
+function displayAnswer(id){
+    count+=1
     let answer = data["answer"]
-    let ids = ["crush1", "crush2", "crush3", "drum1", "drum2", "drum3", "drum4", "drum5"]
-    // console.log("here")
-    // let i = 0;
-    // let ans = answer[i]
-    // let drum_ele = "#"+ids[ans]
-    let arrow = "#"+ids[answer[0]]+"arrow"
-    $(arrow).removeClass("hidden")
-    for (let i = 0; i < answer.length; i++) { 
-        let ans = answer[i]
-        let drum_ele = "#"+ids[ans]
-        let new_arrow = drum_ele+"arrow"
-        
-        $(drum_ele).click(function(){
-            $(new_arrow).addClass("hidden")
-            let next_ans = answer[i+1]
-            let next_arrow = "#"+ids[next_ans]+"arrow"
-            $(next_arrow).removeClass("hidden")
+    console.log(id)
+     let arrow = "#"+id+"arrow"
+     $(arrow).addClass("hidden")
 
-        })
-        
-    }
+    let next_arrow = "#"+answer[count]+"arrow"
+    $(next_arrow).removeClass("hidden")
+
 }
 $(document).ready(function(){
     
     let answerTitle = "Question "+data["id"]+" answer: please follow the arrows to replicate the tempo"
     $("#answerTitle").html(answerTitle)
+    let answer = data["answer"]
+    let arrow = "#"+answer[0]+"arrow"
+    // console.log(answer)
+    $(arrow).removeClass("hidden")
 
-    displayAnswer()
-   
+    $("area").click(function(){
+        displayAnswer(this.id)
+
+    })
     $("#back").click(function(){ 
         
         window.location.href="/quizfeedback"

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    score = score["score"]
+    score = score
     feedback = "Congratulations, you got " + score +"/5!"
     $("#feedback").html(feedback)
     if (isCorrect["1"] == "1"){
