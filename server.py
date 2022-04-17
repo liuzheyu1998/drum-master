@@ -98,8 +98,8 @@ data = {
     },
     "5": {
         "id": "5",
-        "audio_path": "/static/audio_quiz/quiz5.mp3",
-        "answer": ['4', '4', '5', '5', '6', '6', '7', '7', '2']
+        "audio_path": "/static/audio_drum/hi_hat.mov",
+        "answer": ['1']
     }
 }
 
