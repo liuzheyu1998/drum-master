@@ -20,7 +20,7 @@ function save_learn_input(data) {
         // receive new data from backend
         // format: {id: [time1, time2, ...]}
         success: function(response){
-            console.log(response)
+            // console.log(response)
                 
             if (Object.keys(response).length == 8) {
                 if (alert_shown == false) {
