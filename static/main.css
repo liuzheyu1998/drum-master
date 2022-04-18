@@ -157,7 +157,7 @@ body{
     background-blend-mode: luminosity;
 }
 
-#drum_box {
+.drum_box {
     margin-top: 80px;
     background-color: rgb(255, 255, 255);
     border-radius: 30px;
