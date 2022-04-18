@@ -105,7 +105,6 @@ data = {
 
 score = {"score":0}
 answer = []
-correct_answer = [[1],[1],[1,2],[1],[3]]
 isCorrect = {
     "1": "0",
     "2": "0",
@@ -150,6 +149,7 @@ def quiz(id=None):
     if id == "1":
         # score["score"] = 0
         answer.clear()
+        global isCorrect
         isCorrect = {
             "1": "0",
             "2": "0",

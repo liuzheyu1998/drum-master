@@ -34,14 +34,31 @@ $(document).ready(function(){
     
     let answerTitle = "Question "+data["id"]+" answer: please follow the arrows to replicate the tempo"
     $("#answerTitle").html(answerTitle)
-    console.log(data)
+    //console.log(data)
     let answer = data["answer"]
     let arrow = "#"+answer[0]+"arrow"
-    // console.log(answer)
+    let counter = 0 //counte the number of clicks
+    console.log("This is answer"+answer[0])
     $(arrow).removeClass("hidden")
 
     $("area").click(function(){
-        displayAnswer(this.id)
+        // console.log("this.id",this.id)
+        // console.log("answer",answer[counter])
+
+        if (this.id == answer[counter]){
+            
+            displayAnswer(this.id)
+            counter+=1
+        }
+        // if (counter == 0&&this.id==answer[0]){
+        // displayAnswer(this.id)
+        // counter+=1
+        // }
+        // else if (counter >=1 && this.id==answer[counter]){
+        //     console.log("true")
+        //     displayAnswer(this.id)
+
+        // }
 
     })
     $("#back").click(function(){ 
