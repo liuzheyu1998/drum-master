@@ -27,8 +27,10 @@
     <script type="text/javascript" src="{{ url_for('static', filename = 'jquery.imagemapster.js') }}"></script>
 
 </head>
+{% extends "layout.html" %}
 
-<body id="welcome_background">
+{% block content %}
+
 
 
     <br>
@@ -39,6 +41,5 @@
     <br>
     <button type="button" id="startToLearn" class="btn btn-info startButton">Start to learn</button>
 
-</body>
 
-</html>
+{% endblock %}
