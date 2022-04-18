@@ -4,21 +4,24 @@
     position:relative
 }
 
-.drumkit{
-    width: 860px;
-    /* display: block; */
-    position: relative;
-    z-index: 1;
+.subtitle{
+    background-color: rgb(5, 92, 127);
+    font-size: 17pt;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    text-align: center;
+    color: bisque;
 }
 
-.subtitle{
-    background-color: skyblue;
-    font-size: 17pt;
-    
-}
 .accentColor{
-    background-color: red;
+    background-color: rgb(93, 215, 249);
 }
+
+.accentColor_font{
+    color: whitesmoke;
+}
+
 .bold{
     font-weight: bold;
     
@@ -142,18 +145,29 @@
     background-repeat: no-repeat;
     background-attachment: fixed;  
     background-size: cover;
+    background-blend-mode: luminosity;
 }
 
 body{
-    background-color: black;
+    /* background-color: black; */
+    background-image: url('welcome_background.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    background-blend-mode: luminosity;
 }
 
 #drum_box {
-    margin-top: 100px;
-    /* background-image: url('/static/drumkit.png'); */
-    box-shadow: 0px 0px 50px 36px rgb(142, 209, 245);
-    /* box-shadow:
-       inset 0 -3em 3em rgb(142, 209, 245),
-             0  0  0 2px rgb(255,255,255),
-             1em 3em 3em rgba(142, 209, 245); */
+    margin-top: 80px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    box-shadow: 0px 0px 50px 25px rgba(84, 199, 248, 0.787);
+}
+
+.drumkit{
+    width: 860px;
+    /* display: block; */
+    position: relative;
+    z-index: 1;
+    border-radius: 30px;
 }
