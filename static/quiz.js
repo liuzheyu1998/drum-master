@@ -91,10 +91,21 @@ function submit(cur_score){
 $(document).ready(function(){
     // cur_score = score["score"]
     // console.log(cur_score)
-     let questionTitle = "Question "+data["id"]+": Please replicate the tempo"
+    if(data["id"] != "1"){
+        $("#quiz_tut").addClass("hidden")
+    }
+    let questionTitle = "Question "+data["id"]+": Please replicate the tempo"
     
     // console.log(questionTitle)
-     $("#questionTitle").html(questionTitle)
+    
+    
+    $("#questionTitle").html(questionTitle)
+    $("#quiz_tut_close").click(function(){   
+        $("#quiz_tut").addClass("hidden")
+
+        
+    })
+    
     
     
     $("#submit").click(function(){   
@@ -111,6 +122,17 @@ $(document).ready(function(){
          console.log(arr)
          arr=[]
          console.log(arr)
+         cur = 1
+         seqs = [[],[],[],[],[],[],[],[],[]]
+         $("#1ans").html("")
+         $("#2ans").html("")
+         $("#3ans").html("")
+         $("#4ans").html("")
+         $("#5ans").html("")
+         $("#6ans").html("")
+         $("#7ans").html("")
+         $("#8ans").html("")
+
 
 
         
