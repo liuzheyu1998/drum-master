@@ -113,6 +113,7 @@ isCorrect = {
     "5": "0",
 
 }
+next_id = {"next_id":"0"}
 
 LEARN_INPUT = {}    # {id: [time1, time2, ...]}
 
@@ -168,16 +169,20 @@ def quizresult(id=None):
     #pass in the array of answer.
     return render_template('quizAnswer.html', drum_kit = drum_kit, data = data[id]) 
 
+@app.route('/quizcorrectness/<id>')
+def quizcorrectness(id=None):
+    #pass in the array of answer.
+    return render_template('quizCorrectness.html', drum_kit = drum_kit, data = data[id], next_id = next_id) 
+
 @app.route('/quizfeedback')
 def quizFeedback():
     #Need to do some comparison over here
     score = 0
     print("This is answer",answer)
     for i in range(1,len(answer)+1):
-        dex = i
         print(i)
         print("fb", answer[i-1],data[str(i)]["answer"])
-        if answer[i-1] == data[str(dex)]["answer"]:
+        if answer[i-1] == data[str(i)]["answer"]:
             score += 1
             index = i+1
             isCorrect[str(index-1)] = 1
@@ -187,8 +192,10 @@ def quizFeedback():
 
 @app.route('/submitAnswer', methods = ['GET', 'POST'])
 def submitAnswer():
+    global next_id
     json_data = request.get_json()   
     answer.append((json_data["answer"]))
+    next_id["next_id"] = str(int(json_data["id"]) + 1)
     print("testing answer",answer)
     # score["score"] = json_data["score"]
     # isCorrect[json_data["id"]] = json_data["correct"]
