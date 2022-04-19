@@ -105,6 +105,11 @@ $(document).ready(function(){
 
         
     })
+    $("#quiz_tut_ok").click(function(){   
+        $("#quiz_tut").addClass("hidden")
+
+        
+    })
     
     
     
