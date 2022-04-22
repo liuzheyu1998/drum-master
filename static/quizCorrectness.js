@@ -66,7 +66,7 @@ $(document).ready(function(){
     })
     $("#next").click(function(){ 
         let new_url = "/quiz/"+next_id["next_id"]
-        if(next_id["next_id"]=="5"){
+        if(next_id["next_id"]=="6"){
             new_url = "/quizfeedback"
         }
         
