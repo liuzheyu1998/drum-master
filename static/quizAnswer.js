@@ -3,8 +3,11 @@ let arr = []
 //     var audio = new Audio('/static/crash_cymbal.mp3');
 //     audio.play();
 // }
-function play() {
+function play(element) {
     let id = event.srcElement.id
+    // $(element).addClass("drum_clicked")
+    // setTimeout(() => { $(element).removeClass("drum_clicked") }, 180);
+
     //console.log("played " + drum_kit[id]["name"] + " (id=" + id + ")")
     let audio_path = new Audio(drum_kit[id]["audio_path"]);
     arr.push(id)

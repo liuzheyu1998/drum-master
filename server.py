@@ -122,7 +122,8 @@ def learn(id=None):
     global DRUM_KIT
     global DRUM_PLAYED
     global LEARN_INPUT
-
+    if (len(LEARN_INPUT)==8):
+        LEARN_INPUT.clear()
     if request.method == "GET":
         return render_template('learn.html', drum_kit=drum_kit) 
     if request.method == "POST":
@@ -133,7 +134,6 @@ def learn(id=None):
             LEARN_INPUT[input["id"]].append(input["time"])
         else:
             LEARN_INPUT[input["id"]] = [input["time"]]
-    
     return jsonify(LEARN_INPUT)
 
 # @app.route('/edit/<id>')

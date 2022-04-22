@@ -20,7 +20,7 @@ function save_learn_input(data) {
         // receive new data from backend
         // format: {id: [time1, time2, ...]}
         success: function(response){
-            // console.log(response)
+             console.log(response)
                 
             if (Object.keys(response).length == 8) {
                 if (alert_shown == false) {
@@ -43,7 +43,9 @@ function save_learn_input(data) {
 
 function display_alert(str, id) {
     let div = $("<div id='alert" + id + "' class='alert alert-info alert-dismissible fade show alert-fixed'></div>")
-    let btn_div = $("<strong>Note!</strong>  " + str + "<button type='button' class='btn-close' id='btn_alert" + id + "'></button>")
+    let btn_div = $("<div class = 'col-12'> <strong>Hi, </strong> <br>" + str + "</div>")
+    let new_div = $("<div class = 'row'><div class='col-10'></div><div class = 'col-2'><button type='button' class='btn btn-info' id='btn_alert" + id + "'>OK</button></div></div>")
+    btn_div.append(new_div)
     div.append(btn_div)
     $("#alert_section").append(div)
 }
@@ -73,7 +75,7 @@ function btn_alert2() {
 $(document).ready(function(){
     console.log("learn.js ready...")
     // $('img').mapster('highlight') 
-    display_alert("Try them all before the quiz.", "1")
+    display_alert("Welcome to the Drum Master! <br>Click each piece and see what will happen! <br> Once you try them <strong> all</strong>, you will enter the quiz.", "1")
 
     btn_alert1()
     $("#quizbutton").click(function(){ 

@@ -116,7 +116,6 @@
     top: 40%; 
     left: 35%;
     width: 600px;
-    height: 100px;
     z-index: 9999; 
     border-radius: 15px;
     font-size: x-large;
@@ -264,5 +263,17 @@ body{
 }
 .alert-high{
     height: 6.5cm;
+}
+.learn-alert{
+    height: auto;
+}
+.drumstick:hover{
+    cursor:url(/static/cursor.cur), auto;
+}
+.drumstick:active{
+    cursor:url(/static/cursor_clicked.cur),auto;
+}
 
+#btn_alert{
+    float: right;
 }
