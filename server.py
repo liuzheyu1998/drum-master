@@ -35,42 +35,57 @@ app = Flask(__name__)
 drum_kit = {
     "1": {
         "id": "1",
-        "name": "hi_hat",
+        "name": "Hi Hat Cymbal",
+        "category": "Cymbals",
+        "description": "bright, metallic",
         "audio_path": "/static/audio_drum/hi_hat.mov"
     },
     "2": {
         "id": "2",
-        "name": "crash1",
+        "name": "Crash Cymbal",
+        "category": "Cymbals",
+        "description": "bright, metallic",
         "audio_path": "/static/audio_drum/crash1.mov"
     },
     "3": {
         "id": "3",
-        "name": "crash2",
+        "name": "Ride Cymbal",
+        "category": "Cymbals",
+        "description": "bright, metallic",
         "audio_path": "/static/audio_drum/crash2.mov"
     },
     "4": {
         "id": "4",
-        "name": "snare_drum",
+        "name": "Snare Drum",
+        "category": "Drums",
+        "description": "boomy, middly",
         "audio_path": "/static/audio_drum/snare_drum.mov"
     },
     "5": {
         "id": "5",
-        "name": "hi_tom",
+        "name": "Hi Tom",
+        "category": "Drums",
+        "description": "boomy, middly",
         "audio_path": "/static/audio_drum/hi_tom.mov"
     },
     "6": {
         "id": "6",
-        "name": "mid_tom",
+        "name": "Mid Tom",
+        "category": "Drums",
+        "description": "boomy, middly",
         "audio_path": "/static/audio_drum/mid_tom.mov"
     },
     "7": {
         "id": "7",
-        "name": "low_tom",
+        "name": "Low Tom",
+        "description": "",
         "audio_path": "/static/audio_drum/low_tom.mov"
     },
     "8": {
         "id": "8",
-        "name": "bass_drum",
+        "name": "Bass Drum",
+        "category": "Drums",
+        "description": "boomy, middly",
         "audio_path": "/static/audio_drum/bass_drum.mov"
     }
 }
