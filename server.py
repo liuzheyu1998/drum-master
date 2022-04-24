@@ -87,7 +87,7 @@ data = {
     "1": {
         "id": "1",
         "audio_path": "/static/audio_quiz/quiz1.mp3",
-        "answer": ['4']
+        "answer": ['1', '2', '3']
     },
     "2": {
         "id": "2",
