@@ -1,9 +1,19 @@
 function play() {
+    // play drum
     let id = event.srcElement.id
     console.log("played " + drum_kit[id]["name"] + " (id=" + id + ")")
     let audio_path = new Audio(drum_kit[id]["audio_path"]);
     audio_path.play();
 
+    // clear description view
+    $("#description").html("")
+    // show drum description
+    let name_div = $("<div class='bold x-large'>" + drum_kit[id]["name"] + "</div>")
+    let des_div = $("<div>- " + drum_kit[id]["description"] + "</div>")
+    $("#description").append(name_div)
+    $("#description").append(des_div)
+
+    // save user input data
     let data = {"id": id, "time": Date.now()}
     save_learn_input(data)
 }
