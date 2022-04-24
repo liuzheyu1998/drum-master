@@ -17,15 +17,38 @@ function play(element) {
     $(seqid).html(seqs[parseInt(id)].toString());
     audio_path.play();
 }
+
 function arraysEqual(a1,a2) {
     return JSON.stringify(a1)==JSON.stringify(a2);
 }
 
+function click_hide_btn() {
+    $(".hide-btn").click(function(){   
+        $("#video")[0].pause();
+        $("#video_container").empty()
+        $("#hide-btn").addClass("hidden");
+    })
+}
+
 
 function playQuestion() {
-    var audio = new Audio(data["audio_path"]);
-    audio.play();
+    let path = data["audio_path"];
+    
+    if (path.slice(-3) == "mp4") {
+        console.log(path.slice(-3))
+        let video_div = $("<div><video id='video' width='600' controls autoplay ><source src='" + path + "' type='video/mp4'</video></div>")
+        let close_btn = $("<button id='hide-btn' class='close hide-btn'>X</button>")
+        
+        $("#video_container").append(video_div)
+        $("#video_container").append(close_btn)
+        click_hide_btn()
+        
+    } else {
+        var audio = new Audio(path);
+        audio.play();
+    }
 }
+
 function submit(cur_score){
     let data_to_save = {
         "score": 0, // don't need this
@@ -104,14 +127,11 @@ $(document).ready(function(){
 
         
     })
-    $("#quiz_tut_ok").click(function(){   
-        $("#quiz_tut").addClass("hidden")
 
-        
+    $("#quiz_tut_ok").click(function(){   
+        $("#quiz_tut").addClass("hidden")        
     })
-    
-    
-    
+
     $("#submit").click(function(){   
         //console.log(cur_score)
         console.log("here")

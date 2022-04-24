@@ -94,7 +94,8 @@ data = {
     "1": {
         "id": "1",
         "audio_path": "/static/audio_quiz/quiz1.mp3",
-        "answer": ['4']
+        "answer": ["1", "2", "3"]
+        # "answer": ['4']
     },
     "2": {
         "id": "2",
@@ -113,8 +114,8 @@ data = {
     },
     "5": {
         "id": "5",
-        "audio_path": "/static/audio_drum/hi_hat.mov",
-        "answer": ['1']
+        "audio_path": "/static/audio_quiz/quiz5.mp4",
+        "answer": ['4', '4', '5', '5', '6', '6', '7', '7', '2']
     }
 }
 

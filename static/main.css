@@ -117,11 +117,22 @@
 
     visibility: hidden;
 }
+
 .alert-fixed {
     position:fixed; 
     top: 40%; 
     left: 35%;
     width: 600px;
+    z-index: 9999; 
+    border-radius: 15px;
+    font-size: x-large;
+}
+
+.hide-btn {
+    position:fixed; 
+    top: 40%; 
+    left: 66%;
+    width: 60px;
     z-index: 9999; 
     border-radius: 15px;
     font-size: x-large;
