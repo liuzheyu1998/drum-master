@@ -36,42 +36,36 @@ drum_kit = {
     "1": {
         "id": "1",
         "name": "Hi Hat Cymbal",
-        "category": "Cymbals",
         "description": "metallic",
         "audio_path": "/static/audio_drum/hi_hat.mov"
     },
     "2": {
         "id": "2",
         "name": "Crash Cymbal",
-        "category": "Cymbals",
         "description": "metallic",
         "audio_path": "/static/audio_drum/crash1.mov"
     },
     "3": {
         "id": "3",
         "name": "Ride Cymbal",
-        "category": "Cymbals",
         "description": "metallic",
         "audio_path": "/static/audio_drum/crash2.mov"
     },
     "4": {
         "id": "4",
         "name": "Snare Drum",
-        "category": "Drums",
         "description": "boomy",
         "audio_path": "/static/audio_drum/snare_drum.mov"
     },
     "5": {
         "id": "5",
         "name": "Hi Tom",
-        "category": "Drums",
         "description": "boomy",
         "audio_path": "/static/audio_drum/hi_tom.mov"
     },
     "6": {
         "id": "6",
         "name": "Mid Tom",
-        "category": "Drums",
         "description": "boomy",
         "audio_path": "/static/audio_drum/mid_tom.mov"
     },
@@ -84,7 +78,6 @@ drum_kit = {
     "8": {
         "id": "8",
         "name": "Bass Drum",
-        "category": "Drums",
         "description": "boomy",
         "audio_path": "/static/audio_drum/bass_drum.mov"
     }
@@ -94,8 +87,7 @@ data = {
     "1": {
         "id": "1",
         "audio_path": "/static/audio_quiz/quiz1.mp3",
-        "answer": ["1", "2", "3"]
-        # "answer": ['4']
+        "answer": ['4']
     },
     "2": {
         "id": "2",
