@@ -36,6 +36,13 @@ function displayAnswer(id){
 $(document).ready(function(){
     
     let answerTitle = "Question "+data["id"]+" answer: please follow the arrows to replicate the tempo"
+    if (data["id"] != "1") {
+        $("#answerTitle").html(answerTitle)
+        let image_div = $("<input type='image' src='/static/audio-button.png' class='audio-button' OnClick='playQuestion()'/>")
+        $("#subtitle_content").append(image_div)
+
+    }
+
     $("#answerTitle").html(answerTitle)
     //console.log(data)
     let answer = data["answer"]
