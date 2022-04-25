@@ -122,8 +122,13 @@ data = {
     },
     "5": {
         "id": "5",
-        "audio_path": "/static/audio_quiz/quiz5.mp4",
-        "answer": ['4', '4', '5', '5', '6', '6', '7', '7', '2']
+        "audio_path_A": "/static/audio_quiz/quiz5/quiz5_a.mp3",
+        "audio_path_B": "/static/audio_quiz/quiz5/quiz5_b_ans.mp3",
+        "audio_path_C": "/static/audio_quiz/quiz5/quiz5_c.mp3",
+        "audio_path_D": "/static/audio_quiz/quiz5/quiz5_d.mp3",
+        "answer": ['3', '4', '8', '2'],
+        "ans":['2']
+
     }
 }
 
@@ -206,7 +211,10 @@ def quizFeedback():
     for i in range(1,len(answer)+1):
         print(i)
         print("fb", answer[i-1],data[str(i)]["answer"])
-        if answer[i-1] == data[str(i)]["answer"]:
+        ans = data[str(i)]["answer"]
+        if i == 5:
+            ans = data[str(i)]["ans"]
+        if answer[i-1] == ans :
             score += 1
             index = i+1
             isCorrect[str(index-1)] = 1

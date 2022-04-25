@@ -84,8 +84,9 @@ function submit(cur_score){
     }
     //data_to_save["answer"] = arr
     let ans = data["answer"]
-    console.log("ans555")
-    console.log(ans)
+    if(data["id"]=="5"){
+        ans = data["ans"]
+    }
 
 
     if (arraysEqual(arr, ans)){
