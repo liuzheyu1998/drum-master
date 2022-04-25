@@ -298,3 +298,12 @@ body{
 #btn_alert{
     float: right;
 }
+.audio-option{
+    width:30px;
+    height:30px;
+}
+
+.selected{
+    background-color: gray; 
+    color: black;
+}

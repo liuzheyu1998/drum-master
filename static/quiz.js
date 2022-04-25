@@ -187,6 +187,18 @@ $(document).ready(function(){
 
        
     })
+    $("#Aoption").click(function(){  
+        $("#Aoption").toggleClass("selected");
+    })
+    $("#Boption").click(function(){  
+        $("#Boption").toggleClass("selected");
+    })
+    $("#Coption").click(function(){  
+        $("#Coption").toggleClass("selected");
+    })
+    $("#Doption").click(function(){  
+        $("#Doption").toggleClass("selected");
+    })
 
 
    

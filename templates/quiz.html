@@ -27,27 +27,76 @@
                 <div id="video_container" class='alert-fixed'></div>
             </div>
             
-            <div class="quizAnswer">
-                <img src="/static/drumkit.png" class="drumkit" usemap="#mymap" id="drum">
-                <map name="mymap">
-                    <area class = "drumstick" shape="circle" coords="136,224,64" href="#" onclick="play(this)" id="1">
-                    <area class = "drumstick" shape="circle" coords="270,120,75" href="#" onclick="play(this)" id="2">
-                    <area class = "drumstick" shape="circle" coords="672,200,104" href="#" onclick="play(this)" id="3">
-                    <area class = "drumstick" shape="circle" coords="240,300,64" href="#" onclick="play(this)" id="4">
-                    <area class = "drumstick" shape="circle" coords="360,224,40" href="#" onclick="play(this)" id="5">
-                    <area class = "drumstick" shape="circle" coords="510,248,48" href="#" onclick="play(this)" id="6">
-                    <area class = "drumstick" shape="circle" coords="600,440,84" href="#" onclick="play(this)" id="7">   
-                    <area class = "drumstick" shape="circle" coords="416,400,80" href="#" onclick="play(this)" id="8">
-    
-                </map> 
-                <div class="ans1" id="1ans"></div>
-                <div class="ans2" id="2ans"></div>
-                <div class="ans3" id="3ans"></div>
-                <div class="ans4" id="4ans"></div>  
-                <div class="ans5" id="5ans"></div>
-                <div class="ans6" id="6ans"></div>
-                <div class="ans7" id="7ans"></div>
-                <div class="ans8" id="8ans"></div>  
+            <div class="row">
+                <div class="col-1">
+
+                </div>
+                <div class="col-10">
+                    <div id="quizVideo">
+                        <video width="860" height="600" controls z-index="20">
+                            <source src="/static/quiz5Video.mp4" >
+                        </video>
+                        <div class="row">
+                            <div class="col-3">
+                                <button type="button" class="btn btn-info " id="Aoption" >A</button>
+                                <img src="/static/audio-button.png" class="audio-option" id="A" OnClick="playQuestion()">
+
+                                
+
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-info " id="Aoption">B</button>
+                                <img src="/static/audio-button.png" class="audio-option" id="B" OnClick="playQuestion()">
+
+                                
+
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-info" id="Aoption">C</button>
+                                <img src="/static/audio-button.png" class="audio-option" id="C" OnClick="playQuestion()">
+
+                                
+
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-info " id="Aoption">D</button>
+                                <img src="/static/audio-button.png" class="audio-option" id="D" OnClick="playQuestion()">
+
+                                
+
+                            </div>
+                            
+                            
+
+                            
+
+                        </div>
+
+                    </div>
+                    <div class="quizAnswer hidden">
+                        <img src="/static/drumkit.png" class="drumkit" usemap="#mymap" id="drum">
+                        <map name="mymap">
+                            <area class = "drumstick" shape="circle" coords="136,224,64" href="#" onclick="play(this)" id="1">
+                            <area class = "drumstick" shape="circle" coords="270,120,75" href="#" onclick="play(this)" id="2">
+                            <area class = "drumstick" shape="circle" coords="672,200,104" href="#" onclick="play(this)" id="3">
+                            <area class = "drumstick" shape="circle" coords="240,300,64" href="#" onclick="play(this)" id="4">
+                            <area class = "drumstick" shape="circle" coords="360,224,40" href="#" onclick="play(this)" id="5">
+                            <area class = "drumstick" shape="circle" coords="510,248,48" href="#" onclick="play(this)" id="6">
+                            <area class = "drumstick" shape="circle" coords="600,440,84" href="#" onclick="play(this)" id="7">   
+                            <area class = "drumstick" shape="circle" coords="416,400,80" href="#" onclick="play(this)" id="8">
+            
+                        </map> 
+                        <div class="ans1" id="1ans"></div>
+                        <div class="ans2" id="2ans"></div>
+                        <div class="ans3" id="3ans"></div>
+                        <div class="ans4" id="4ans"></div>  
+                        <div class="ans5" id="5ans"></div>
+                        <div class="ans6" id="6ans"></div>
+                        <div class="ans7" id="7ans"></div>
+                        <div class="ans8" id="8ans"></div>  
+                    </div>
+                    
+                </div>
             </div>
         </div>
 
