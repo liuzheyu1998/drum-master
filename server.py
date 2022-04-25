@@ -102,8 +102,8 @@ drum_kit = {
 data = {
     "1": {
         "id": "1",
-        "audio_path": "/static/audio_quiz/quiz1.mp3",
-        "answer": ['1', '2', '3']
+        "audio_path": "",
+        "answer": ['5', '6', '7']
     },
     "2": {
         "id": "2",
