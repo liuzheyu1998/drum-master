@@ -35,6 +35,11 @@ function displayAnswer(id){
 
 }
 $(document).ready(function(){
+    if(data["id"] != "5"){
+        console.log("empty")
+        $("#quizOptions").empty()
+
+    }
     
     let answerTitle = "Question "+data["id"]+" answer: please follow the arrows to replicate the tempo"
     $("#answerTitle").html(answerTitle)
