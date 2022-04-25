@@ -145,6 +145,9 @@ function submit(cur_score){
 $(document).ready(function(){
     // cur_score = score["score"]
     // console.log(cur_score)
+    $("#homeNav").removeClass("bold")
+    $("#learnNav").removeClass("bold")
+    $("#quizNav").addClass("bold")
     if (data["id"]!="1"){
         $("#quiz_tut").addClass("hidden")
         if(data["id"] != "5"){

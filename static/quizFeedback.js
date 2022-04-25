@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    $("#homeNav").removeClass("bold")
+    $("#learnNav").removeClass("bold")
+    $("#quizNav").addClass("bold")
     score = score
     feedback = "Congratulations, you got " + score +"/5!"
     $("#feedback").html(feedback)

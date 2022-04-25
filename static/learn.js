@@ -56,6 +56,9 @@ function save_learn_input(data) {
 }
 
 function display_alert(str, id) {
+    $("#quizNav").removeClass("bold")
+    $("#homeNav").removeClass("bold")
+    $("#learnNav").addClass("bold")
     let div = $("<div id='alert" + id + "' class='alert alert-info alert-dismissible fade show alert-fixed'></div>")
     let btn_div = $("<div class = 'col-12'> <strong>Hi, </strong> <br>" + str + "</div>")
     let new_div = $("<div class = 'row'><div class='col-10'></div><div class = 'col-2'><button type='button' class='btn btn-info' id='btn_alert" + id + "'>OK</button></div></div>")

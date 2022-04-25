@@ -35,6 +35,9 @@ function displayAnswer(id){
 
 }
 $(document).ready(function(){
+    $("#homeNav").removeClass("bold")
+    $("#learnNav").removeClass("bold")
+    $("#quizNav").addClass("bold")
     if(data["id"] != "5"){
         console.log("empty")
         $("#quizOptions").empty()
