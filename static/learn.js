@@ -9,8 +9,12 @@ function play() {
     $("#description").html("")
     // show drum description
     let name_div = $("<div class='bold x-large'>" + drum_kit[id]["name"] + "</div>")
-    let des_div = $("<div>- " + drum_kit[id]["description"] + "</div>")
+    let category_div = $("<div> (" + drum_kit[id]["category"] + ")</div>")
+    let pitch_div = $("<div>- Pitch: " + drum_kit[id]["pitch"] + "</div>")
+    let des_div = $("<div>- Sound: " + drum_kit[id]["description"] + "</div>")
     $("#description").append(name_div)
+    $("#description").append(category_div)
+    $("#description").append(pitch_div)
     $("#description").append(des_div)
 
     // save user input data

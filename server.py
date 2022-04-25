@@ -61,7 +61,8 @@ drum_kit = {
         "id": "4",
         "name": "Snare Drum",
         "category": "Drum",
-        "description": "boomy",
+        "description": "Boomy",
+        "pitch": "High",
         "audio_path": "/static/audio_drum/snare_drum.mov"
     },
     "5": {
@@ -69,6 +70,7 @@ drum_kit = {
         "name": "Hi Tom",
         "category": "Tom",
         "description": "boomy",
+        "pitch": "High",
         "audio_path": "/static/audio_drum/hi_tom.mov"
     },
     "6": {
@@ -76,7 +78,7 @@ drum_kit = {
         "name": "Mid Tom",
         "category": "Tom",
         "description": "Boomy",
-        "pitch": "High",
+        "pitch": "Mid",
         "audio_path": "/static/audio_drum/mid_tom.mov"
     },
     "7": {
@@ -84,14 +86,14 @@ drum_kit = {
         "name": "Low Tom",
         "category": "Tom",
         "description": "Boomy",
-        "pitch": "Mid",
+        "pitch": "Low",
         "audio_path": "/static/audio_drum/low_tom.mov"
     },
     "8": {
         "id": "8",
         "name": "Bass Drum",
         "category": "Drum",
-        "description": "boomy",
+        "description": "Boomy",
         "pitch": "Low",
         "audio_path": "/static/audio_drum/bass_drum.mov"
     }
