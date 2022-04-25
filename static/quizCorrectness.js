@@ -23,6 +23,9 @@ var count = 0
 function displayAnswer(id){
     count+=1
     let answer = data["answer"]
+    if(data[id]=="5"){
+        answer = data["seq"]
+    }
     console.log(id)
     console.log(answer)
      let arrow = "#"+id+"arrow"
@@ -46,6 +49,9 @@ $(document).ready(function(){
     $("#answerTitle").html(answerTitle)
     //console.log(data)
     let answer = data["answer"]
+    if(data["id"] == "5"){
+        answer = data["seq"]
+    }
     let arrow = "#"+answer[0]+"arrow"
     let counter = 0 //counte the number of clicks
     console.log("This is answer"+answer[0])

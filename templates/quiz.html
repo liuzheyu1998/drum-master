@@ -34,33 +34,33 @@
                 <div class="col-10">
                     <div id="quizVideo">
                         <video width="860" height="600" controls z-index="20">
-                            <source src="/static/quiz5Video.mp4" >
+                            <source src="/static/audio_quiz/quiz5/quiz5_prompt.mp4" >
                         </video>
                         <div class="row">
                             <div class="col-3">
-                                <button type="button" class="btn btn-info " id="Aoption" >A</button>
-                                <img src="/static/audio-button.png" class="audio-option" id="A" OnClick="playQuestion()">
+                                <button type="button" class="btn btn-info unselected" id="Aoption" >A</button>
+                                <img src="/static/audio-button.png" class="audio-option" id="A" OnClick="playAnswerA()">
 
                                 
 
                             </div>
                             <div class="col-3">
-                                <button type="button" class="btn btn-info " id="Aoption">B</button>
-                                <img src="/static/audio-button.png" class="audio-option" id="B" OnClick="playQuestion()">
+                                <button type="button" class="btn btn-info unselected" id="Boption">B</button>
+                                <img src="/static/audio-button.png" class="audio-option" id="B" OnClick="playAnswerB()">
 
                                 
 
                             </div>
                             <div class="col-3">
-                                <button type="button" class="btn btn-info" id="Aoption">C</button>
-                                <img src="/static/audio-button.png" class="audio-option" id="C" OnClick="playQuestion()">
+                                <button type="button" class="btn btn-info unselected" id="Coption">C</button>
+                                <img src="/static/audio-button.png" class="audio-option" id="C" OnClick="playAnswerC()">
 
                                 
 
                             </div>
                             <div class="col-3">
-                                <button type="button" class="btn btn-info " id="Aoption">D</button>
-                                <img src="/static/audio-button.png" class="audio-option" id="D" OnClick="playQuestion()">
+                                <button type="button" class="btn btn-info unselected" id="Doption">D</button>
+                                <img src="/static/audio-button.png" class="audio-option" id="D" OnClick="playAnswerD()">
 
                                 
 
@@ -73,7 +73,7 @@
                         </div>
 
                     </div>
-                    <div class="quizAnswer hidden">
+                    <div class="quizAnswer" id="mockDrumArea">
                         <img src="/static/drumkit.png" class="drumkit" usemap="#mymap" id="drum">
                         <map name="mymap">
                             <area class = "drumstick" shape="circle" coords="136,224,64" href="#" onclick="play(this)" id="1">

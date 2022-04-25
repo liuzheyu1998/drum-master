@@ -19,6 +19,11 @@ function play(element) {
 }
 
 function arraysEqual(a1,a2) {
+    console.log("a1")
+    console.log(a1)
+    console.log("a2")
+    console.log(a2)
+
     return JSON.stringify(a1)==JSON.stringify(a2);
 }
 
@@ -49,6 +54,27 @@ function playQuestion() {
     }
 }
 
+function playAnswerA() {
+    let path = data["audio_path_A"];
+    var audio = new Audio(path);
+    audio.play();
+}
+function playAnswerB() {
+    let path = data["audio_path_B"];
+    var audio = new Audio(path);
+    audio.play();
+}
+function playAnswerC() {
+    let path = data["audio_path_C"];
+    var audio = new Audio(path);
+    audio.play();
+}
+function playAnswerD() {
+    let path = data["audio_path_D"];
+    var audio = new Audio(path);
+    audio.play();
+}
+
 function submit(cur_score){
     let data_to_save = {
         "score": 0, // don't need this
@@ -57,7 +83,12 @@ function submit(cur_score){
         "answer":arr
     }
     //data_to_save["answer"] = arr
-    if (arraysEqual(arr, data["answer"])){
+    let ans = data["answer"]
+    console.log("ans555")
+    console.log(ans)
+
+
+    if (arraysEqual(arr, ans)){
         is_correct=true
     }
     else{
@@ -113,16 +144,30 @@ function submit(cur_score){
 $(document).ready(function(){
     // cur_score = score["score"]
     // console.log(cur_score)
-    if(data["id"] != "1"){
-        // $("#quiz_tut").addClass("hidden")
+    if (data["id"]!="1"){
+        $("#quiz_tut").addClass("hidden")
+    }
+    if(data["id"] != "5"){
         let questionTitle = "Question "+data["id"]+": Please replicate the tempo"
         $("#questionTitle").html(questionTitle)
         let image_div = $("<input type='image' src='/static/audio-button.png' class='audio-button' OnClick='playQuestion()'/>")
         $("#subtitle_content").append(image_div)
+    }else{
+        let questionTitle = "Question "+data["id"]+": Please choose the audio matching with the video"
+        $("#questionTitle").html(questionTitle)
+
     }
     
     // console.log(questionTitle)
-    
+
+    if(data["id"] == "5"){
+        console.log("empty")
+        $("#mockDrumArea").empty()
+
+    }
+    else{
+        $("#quizVideo").empty()
+    }
     
     
     $("#quiz_tut_close").click(function(){   
@@ -188,16 +233,57 @@ $(document).ready(function(){
        
     })
     $("#Aoption").click(function(){  
-        $("#Aoption").toggleClass("selected");
+        console.log('A')
+        $("#Aoption").removeClass()
+        $("#Boption").removeClass()
+        $("#Coption").removeClass()
+        $("#Doption").removeClass()
+        $("#Aoption").addClass("btn btn-info selected")
+        $("#Boption").addClass("btn btn-info unselected")
+        $("#Coption").addClass("btn btn-info unselected")
+        $("#Doption").addClass("btn btn-info unselected")
+        arr = ["1"]
+        console.log(arr)
+
     })
     $("#Boption").click(function(){  
-        $("#Boption").toggleClass("selected");
+        console.log('B')
+        $("#Aoption").removeClass()
+        $("#Boption").removeClass()
+        $("#Coption").removeClass()
+        $("#Doption").removeClass()
+        $("#Aoption").addClass("btn btn-info unselected")
+        $("#Boption").addClass("btn btn-info selected")
+        $("#Coption").addClass("btn btn-info unselected")
+        $("#Doption").addClass("btn btn-info unselected")
+        arr = ["2"]
+        console.log(arr)
     })
     $("#Coption").click(function(){  
-        $("#Coption").toggleClass("selected");
+        console.log('C')
+        $("#Aoption").removeClass()
+        $("#Boption").removeClass()
+        $("#Coption").removeClass()
+        $("#Doption").removeClass()
+        $("#Aoption").addClass("btn btn-info unselected")
+        $("#Boption").addClass("btn btn-info unselected")
+        $("#Coption").addClass("btn btn-info selected")
+        $("#Doption").addClass("btn btn-info unselected")
+        arr = ["3"]
+        console.log(arr)
     })
     $("#Doption").click(function(){  
-        $("#Doption").toggleClass("selected");
+        console.log('D')
+        $("#Aoption").removeClass()
+        $("#Boption").removeClass()
+        $("#Coption").removeClass()
+        $("#Doption").removeClass()
+        $("#Aoption").addClass("btn btn-info unselected")
+        $("#Boption").addClass("btn btn-info unselected")
+        $("#Coption").addClass("btn btn-info unselected")
+        $("#Doption").addClass("btn btn-info selected")
+        arr = ["4"]
+        console.log(arr)
     })
 
 
