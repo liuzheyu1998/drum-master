@@ -36,49 +36,63 @@ drum_kit = {
     "1": {
         "id": "1",
         "name": "Hi Hat Cymbal",
-        "description": "metallic",
+        "category": "Cymbal",
+        "description": "Metallic",
+        "pitch": "Mid low",
         "audio_path": "/static/audio_drum/hi_hat.mov"
     },
     "2": {
         "id": "2",
         "name": "Crash Cymbal",
-        "description": "metallic",
+        "category": "Cymbal",
+        "description": "Metallic",
+        "pitch": "Mid",
         "audio_path": "/static/audio_drum/crash1.mov"
     },
     "3": {
         "id": "3",
         "name": "Ride Cymbal",
-        "description": "metallic",
+        "category": "Cymbal",
+        "description": "Metallic",
+        "pitch": "High",
         "audio_path": "/static/audio_drum/crash2.mov"
     },
     "4": {
         "id": "4",
         "name": "Snare Drum",
+        "category": "Drum",
         "description": "boomy",
         "audio_path": "/static/audio_drum/snare_drum.mov"
     },
     "5": {
         "id": "5",
         "name": "Hi Tom",
+        "category": "Tom",
         "description": "boomy",
         "audio_path": "/static/audio_drum/hi_tom.mov"
     },
     "6": {
         "id": "6",
         "name": "Mid Tom",
-        "description": "boomy",
+        "category": "Tom",
+        "description": "Boomy",
+        "pitch": "High",
         "audio_path": "/static/audio_drum/mid_tom.mov"
     },
     "7": {
         "id": "7",
         "name": "Low Tom",
-        "description": "boomy",
+        "category": "Tom",
+        "description": "Boomy",
+        "pitch": "Mid",
         "audio_path": "/static/audio_drum/low_tom.mov"
     },
     "8": {
         "id": "8",
         "name": "Bass Drum",
+        "category": "Drum",
         "description": "boomy",
+        "pitch": "Low",
         "audio_path": "/static/audio_drum/bass_drum.mov"
     }
 }
