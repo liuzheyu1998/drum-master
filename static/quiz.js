@@ -3,19 +3,45 @@ let next_id = 0
 let is_correct = true
 let seqs = [[],[],[],[],[],[],[],[],[]]
 let cur = 1
+let click = "&#10004"
+let clicked = 0
 
 function play(element) {
     let id = event.srcElement.id
     let audio_path = new Audio(drum_kit[id]["audio_path"]);
-    arr.push(id)
-    console.log(cur)
-    console.log(parseInt(id))
-    console.log(seqs[parseInt(id)])
-    seqs[parseInt(id)].push(cur);
-    cur += 1;
-    let seqid = "#"+id+"ans";
-    $(seqid).html(seqs[parseInt(id)].toString());
-    audio_path.play();
+    //console.log(cur)
+    //console.log(parseInt(id))
+    //console.log(seqs[parseInt(id)])
+    //seqs[parseInt(id)].push(cur);
+    if(data["id"] == "2")
+    {
+        console.log(clicked)
+            cur += 1;
+        for (let i= 0; i<9;i++){        
+            let seqid = "#"+i+"ans";
+            $(seqid).html("");
+            clicked = 1
+            arr = []
+            audio_path.play();
+            }
+        arr.push(id)
+        cur += 1;
+        let seqid = "#"+id+"ans";
+        $(seqid).html(click);
+
+        clicked = 1
+        audio_path.play();
+        console.log(clicked)
+    
+    }   else{
+        arr.push(id)
+        seqs[parseInt(id)].push(cur);
+        cur += 1;
+        let seqid = "#"+id+"ans";
+        $(seqid).html(seqs[parseInt(id)].toString());
+        audio_path.play();
+    }
+    
 }
 
 function arraysEqual(a1,a2) {
@@ -87,6 +113,7 @@ function submit(cur_score){
     if(data["id"]=="5"){
         ans = data["ans"]
     }
+
 
 
     if (arraysEqual(arr, ans)){
