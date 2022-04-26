@@ -17,6 +17,9 @@ function play() {
     $("#description").append(pitch_div)
     $("#description").append(des_div)
 
+    // remove arrow
+    $("#" + id + "arrow_learn").addClass("hidden")
+
     // save user input data
     let data = {"id": id, "time": Date.now()}
     save_learn_input(data)
@@ -34,7 +37,7 @@ function save_learn_input(data) {
         // receive new data from backend
         // format: {id: [time1, time2, ...]}
         success: function(response){
-             console.log(response)
+            //  console.log(response)
                 
             if (Object.keys(response).length == 8) {
                 if (alert_shown == false) {
@@ -78,11 +81,19 @@ function display_quiz() {
 function btn_alert1() {
     $("#btn_alert1").click(function() {
         $("#alert1").alert("close");
+
+        // setup all arrows
+        for (let i = 1; i < 9; i++) {
+            let id = i.toString()
+            $("#" + id + "arrow_learn").removeClass("hidden")
+        }
+        
     }) 
 }
 
 function btn_alert2() {
     $("#btn_alert2").click(function() {
+        console.log("!!!")
         $("#alert2").alert("close");
         display_quiz()
     })
@@ -93,8 +104,8 @@ $(document).ready(function(){
     console.log("learn.js ready...")
     // $('img').mapster('highlight') 
     display_alert("Welcome to the Drum Master! <br>Click each piece and see what will happen! <br> Once you try them <strong> all</strong>, you will enter the quiz.", "1")
-
     btn_alert1()
+    
     $("#quizbutton").click(function(){ 
         window.location.href="/quiz/1"
 

@@ -111,8 +111,76 @@
     left: 470px;
     width: 50px;
     z-index: 10;
+}
+
+.arrow1_learn{
+    position: absolute;
+    /* top: 220px; */
+    top: 300px;
+    /* left: 10px; */
+    left: 20px;
+    width: 50px;
+    z-index: 10;
 
 }
+.arrow2_learn{
+    position: absolute;
+    top: 180px;
+    left: 150px;
+    width: 50px;
+    z-index: 10;
+
+}
+.arrow3_learn{
+    position: absolute;
+    top: 250px;
+    left: 510px;
+    width: 50px;
+    z-index: 10;
+
+}
+.arrow4_learn{
+    position: absolute;
+    top: 360px;
+    left: 140px;
+    width: 50px;
+    z-index: 10;
+
+}
+.arrow5_learn{
+    position: absolute;
+    top: 270px;
+    left: 270px;
+    width: 50px;
+    z-index: 10;
+
+}
+.arrow6_learn{
+    position: absolute;
+    top: 300px;
+    left: 415px;
+    width: 50px;
+    z-index: 10;
+
+}
+
+.arrow7_learn{
+    position: absolute;
+    top: 450px;
+    left: 285px;
+    width: 50px;
+    z-index: 10;
+
+}
+.arrow8_learn{
+    position: absolute;
+    top: 470px;
+    left: 480px;
+    width: 50px;
+    z-index: 10;
+
+}
+
 .hidden{
 
     visibility: hidden;
