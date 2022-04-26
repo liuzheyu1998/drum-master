@@ -18,7 +18,26 @@ function playQuestion() {
     audio.play();
 }
 
-
+function playAnswerA() {
+    let path = data["audio_path_A"];
+    var audio = new Audio(path);
+    audio.play();
+}
+function playAnswerB() {
+    let path = data["audio_path_B"];
+    var audio = new Audio(path);
+    audio.play();
+}
+function playAnswerC() {
+    let path = data["audio_path_C"];
+    var audio = new Audio(path);
+    audio.play();
+}
+function playAnswerD() {
+    let path = data["audio_path_D"];
+    var audio = new Audio(path);
+    audio.play();
+}
 var count = 0
 function displayAnswer(id){
     count+=1
@@ -38,14 +57,30 @@ $(document).ready(function(){
     $("#homeNav").removeClass("bold")
     $("#learnNav").removeClass("bold")
     $("#quizNav").addClass("bold")
+    let answerTitle = "Question "+data["id"]+" answer: please follow the arrows to replicate the tempo"
+    $("#answerTitle").html(answerTitle)   
+    if (data["id"] == 1){
+        $("#playButton").addClass("hidden")
+            let answerTitle = "Question "+data["id"]+" answer: Please play all toms from high to low pitch."
+            $("#answerTitle").html(answerTitle)    
+
+    }
     if(data["id"] != "5"){
         console.log("empty")
         $("#quizOptions").empty()
+    }
+    if(data["id"] == "5"){
+        $("#playButton").addClass("hidden")
+        let answerTitle = "Question "+data["id"]+" answer: Please choose the audio matching with the video."
+        $("#answerTitle").html(answerTitle)   
+        
+  
 
     }
-    
-    let answerTitle = "Question "+data["id"]+" answer: please follow the arrows to replicate the tempo"
-    $("#answerTitle").html(answerTitle)
+
+ 
+
+
     //console.log(data)
     let answer = data["answer"]
     let arrow = "#"+answer[0]+"arrow"
