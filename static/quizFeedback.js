@@ -10,6 +10,7 @@ $(document).ready(function(){
     }
     else{
         $("#q1-cor").html("Wrong")
+        $("#q1-cor").addClass("bold")
     }
     $("#feedback").html(feedback)
     if (isCorrect["2"] == "1"){
@@ -17,6 +18,7 @@ $(document).ready(function(){
     }
     else{
         $("#q2-cor").html("Wrong")
+        $("#q2-cor").addClass("bold")
     }
     $("#feedback").html(feedback)
     if (isCorrect["3"] == "1"){
@@ -24,6 +26,7 @@ $(document).ready(function(){
     }
     else{
         $("#q3-cor").html("Wrong")
+        $("#q3-cor").addClass("bold")
     }
     $("#feedback").html(feedback)
     if (isCorrect["4"] == "1"){
@@ -31,6 +34,7 @@ $(document).ready(function(){
     }
     else{
         $("#q4-cor").html("Wrong")
+        $("#q4-cor").addClass("bold")
     }
     $("#feedback").html(feedback)
     if (isCorrect["5"] == "1"){
@@ -38,6 +42,7 @@ $(document).ready(function(){
     }
     else{
         $("#q5-cor").html("Wrong")
+        $("#q5-cor").addClass("bold")
     }
     $("#relearn").click(function(){ 
         
