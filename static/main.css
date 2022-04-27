@@ -116,7 +116,7 @@
 .arrow1_learn{
     position: absolute;
     /* top: 220px; */
-    top: 300px;
+    top: 240px;
     /* left: 10px; */
     left: 20px;
     width: 50px;
@@ -125,7 +125,7 @@
 }
 .arrow2_learn{
     position: absolute;
-    top: 180px;
+    top: 120px;
     left: 150px;
     width: 50px;
     z-index: 10;
@@ -133,7 +133,7 @@
 }
 .arrow3_learn{
     position: absolute;
-    top: 250px;
+    top: 190px;
     left: 510px;
     width: 50px;
     z-index: 10;
@@ -141,7 +141,7 @@
 }
 .arrow4_learn{
     position: absolute;
-    top: 360px;
+    top: 300px;
     left: 140px;
     width: 50px;
     z-index: 10;
@@ -149,7 +149,7 @@
 }
 .arrow5_learn{
     position: absolute;
-    top: 270px;
+    top: 210px;
     left: 270px;
     width: 50px;
     z-index: 10;
@@ -157,7 +157,7 @@
 }
 .arrow6_learn{
     position: absolute;
-    top: 300px;
+    top: 290px;
     left: 415px;
     width: 50px;
     z-index: 10;
@@ -166,7 +166,7 @@
 
 .arrow7_learn{
     position: absolute;
-    top: 450px;
+    top: 410px;
     left: 285px;
     width: 50px;
     z-index: 10;
@@ -174,7 +174,7 @@
 }
 .arrow8_learn{
     position: absolute;
-    top: 470px;
+    top: 490px;
     left: 480px;
     width: 50px;
     z-index: 10;
@@ -206,10 +206,6 @@
     font-size: x-large;
 }
 
-.vertical_center {
-    position: fixed;
-    top: 50%
-}
 .feedbackTitle{
     font-size: xx-large;
     color: red;
@@ -242,10 +238,10 @@ body{
 }
 
 .drum_box {
-    margin-top: 80px;
+    margin-top: 30px;
     background-color: rgb(255, 255, 255);
     border-radius: 30px;
-    box-shadow: 0px 0px 50px 25px rgba(84, 199, 248, 0.787);
+    box-shadow: 0px 0px 50px 15px rgba(84, 199, 248, 0.787);
 }
 
 .inline-block {
@@ -377,4 +373,22 @@ body{
 .selected{
     background-color: skyblue; 
     color: black;
+}
+
+.grey {
+    color: rgb(147, 146, 146)
+}
+
+.sky_blue {
+    color: skyblue
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+
+.space {
+    margin-top: 30px;
 }

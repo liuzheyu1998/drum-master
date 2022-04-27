@@ -8,10 +8,10 @@ function play() {
     // clear description view
     $("#description").html("")
     // show drum description
-    let name_div = $("<div class='bold x-large'>" + drum_kit[id]["name"] + "</div>")
-    let category_div = $("<div> (" + drum_kit[id]["category"] + ")</div>")
-    let pitch_div = $("<div>- Pitch: " + drum_kit[id]["pitch"] + "</div>")
-    let des_div = $("<div>- Sound: " + drum_kit[id]["description"] + "</div>")
+    let name_div = $("<div class='bold x-large'>" + drum_kit[id]["name"] + "</div><br>")
+    let category_div = $("<div><span class='grey'>- Category: </span>" + drum_kit[id]["category"] + "</div>")
+    let pitch_div = $("<div><span class='grey'>- Pitch: </span>" + drum_kit[id]["pitch"] + "</div>")
+    let des_div = $("<div><span class='grey'>- Sound: </span>" + drum_kit[id]["description"] + "</div>")
     $("#description").append(name_div)
     $("#description").append(category_div)
     $("#description").append(pitch_div)
@@ -41,7 +41,7 @@ function save_learn_input(data) {
                 
             if (Object.keys(response).length == 8) {
                 if (alert_shown == false) {
-                    display_alert("You may enter the quiz!", "2")
+                    display_alert("<br>Enter the quiz or practice more.", "2")
                     btn_alert2()
                     alert_shown = true
                 }
@@ -63,7 +63,7 @@ function display_alert(str, id) {
     $("#homeNav").removeClass("bold")
     $("#learnNav").addClass("bold")
     let div = $("<div id='alert" + id + "' class='alert alert-info alert-dismissible fade show alert-fixed'></div>")
-    let btn_div = $("<div class = 'col-12'> <strong>Hi, </strong> <br>" + str + "</div>")
+    let btn_div = $("<div class = 'col-12'>" + str + "</div>")
     let new_div = $("<div class = 'row'><div class='col-10'></div><div class = 'col-2'><button type='button' class='btn btn-info' id='btn_alert" + id + "'>OK</button></div></div>")
     btn_div.append(new_div)
     div.append(btn_div)
@@ -103,7 +103,7 @@ function btn_alert2() {
 $(document).ready(function(){
     console.log("learn.js ready...")
     // $('img').mapster('highlight') 
-    display_alert("Welcome to the Drum Master! <br>Click each piece and see what will happen! <br> Once you try them <strong> all</strong>, you will enter the quiz.", "1")
+    display_alert("<br>Let's learn the sounds!", "1")
     btn_alert1()
     
     $("#quizbutton").click(function(){ 
