@@ -417,3 +417,29 @@ a {
 .height {
     height: 70px;
 }
+
+#domain{
+    margin-top: 80px;
+    text-align: center;
+    font-size: 80px;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+#topic{
+    
+    margin-top: 20;
+    text-align: center;
+    font-size: 48px;
+    color: aliceblue;
+}
+
+#startToLearn{
+    height: 100px;
+    width: 300px;
+    margin-top: 150px;
+}
+#word{
+    padding-left: 35px;
+    padding-top: 17px;
+}
