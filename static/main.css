@@ -423,7 +423,7 @@ a {
     text-align: center;
     font-size: 80px;
     font-weight: bold;
-    color: aliceblue;
+    color: lightgray;
 }
 
 #topic{
@@ -431,7 +431,7 @@ a {
     margin-top: 20;
     text-align: center;
     font-size: 48px;
-    color: aliceblue;
+    color: lightgray;
 }
 
 #startToLearn{
