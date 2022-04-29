@@ -448,3 +448,11 @@ a {
     padding-left: 35px;
     padding-top: 17px;
 }
+.height_last {
+    padding-right:20px;
+    padding-left:20px;
+
+    font-size: 22px;
+    height: 80px;
+    width: 250px;
+}

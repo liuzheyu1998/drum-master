@@ -184,7 +184,7 @@ $(document).ready(function(){
             let image_div = $("<input type='image' src='/static/audio-button.png' class='audio-button' OnClick='playQuestion()'/>")
             $("#subtitle_content").append(image_div)
         }else{
-            let questionTitle = "Question "+data["id"]+":Please choose the audio matching with the video."
+            let questionTitle = "Question "+data["id"]+": Please choose the audio matching with the video."
             $("#questionTitle").html(questionTitle)
     
         }
