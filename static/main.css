@@ -5,13 +5,14 @@
 }
 
 .subtitle{
-    background-color: rgb(5, 92, 127);
+    background-color: #0DCAF0;
     font-size: 17pt;
+    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     text-align: center;
-    color: whitesmoke;
+    color: black;
 }
 
 .whitesmoke {
