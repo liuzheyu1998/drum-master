@@ -278,8 +278,8 @@ body{
     left: 90px;
     width: 80px;
     z-index: 15;
-    border-color: skyblue;
-    background-color: skyblue;
+    border-color: #0DCAF0;
+    background-color: #0DCAF0;
     text-align: center;
 
 }
@@ -289,8 +289,8 @@ body{
     left: 220px;
     width: 80px;
     z-index: 15;
-    border-color: skyblue;
-    background-color: skyblue;
+    border-color: #0DCAF0;
+    background-color: #0DCAF0;
     text-align: center;
 
 }
@@ -300,8 +300,8 @@ body{
     left: 600px;
     width: 80px;
     z-index: 15;
-    border-color: skyblue;
-    background-color: skyblue;
+    border-color: #0DCAF0;
+    background-color: #0DCAF0;
     text-align: center;
 
 }
@@ -311,8 +311,8 @@ body{
     left: 195px;
     width: 80px;
     z-index: 15;
-    border-color: skyblue;
-    background-color: skyblue;
+    border-color: #0DCAF0;
+    background-color: #0DCAF0;
     text-align: center;
 
 }
@@ -322,8 +322,8 @@ body{
     left: 310px;
     width: 80px;
     z-index: 15;
-    border-color: skyblue;
-    background-color: skyblue;
+    border-color: #0DCAF0;
+    background-color: #0DCAF0;
     text-align: center;
 
 }
@@ -333,8 +333,8 @@ body{
     left: 475px;
     width: 80px;
     z-index: 15;
-    border-color: skyblue;
-    background-color: skyblue;
+    border-color: #0DCAF0;
+    background-color: #0DCAF0;
     text-align: center;
 
 }
@@ -345,8 +345,8 @@ body{
     left: 560px;
     width: 80px;
     z-index: 15;
-    border-color: skyblue;
-    background-color: skyblue;
+    border-color: #0DCAF0;
+    background-color: #0DCAF0;
     text-align: center;
     
 
@@ -357,8 +357,8 @@ body{
     left: 375px;
     width: 80px;
     z-index: 15;
-    border-color: skyblue;
-    background-color: skyblue;
+    border-color: #0DCAF0;
+    background-color: #0DCAF0;
     text-align: center;
     
 
@@ -388,7 +388,7 @@ body{
     color: black;
 }
 .selected{
-    background-color: skyblue; 
+    background-color: #0DCAF0; 
     color: black;
 }
 
@@ -397,7 +397,7 @@ body{
 }
 
 .sky_blue {
-    color: skyblue
+    color: #0DCAF0
 }
 
 .center {
