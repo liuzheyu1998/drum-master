@@ -58,6 +58,33 @@ $(document).ready(function(){
     $("#learnNav").removeClass("bold")
     $("#quizNav").addClass("bold")
     let answerTitle = "Question "+data["id"]+" answer: please follow the arrows to replicate the tempo"
+    if (data["id"] != 2){
+        let ans = data["answer"]
+        let curseqid = 1
+        for (const element of ans) {
+            console.log(element);
+            let divid = "#"+element+"ans"
+            console.log(divid)
+            let curval = $(divid).text()
+            console.log(curval)
+            if(curval.length != 0){
+                curval = curval + ", " + curseqid.toString()
+            }
+            else{
+                curval = curseqid.toString()
+            }
+
+
+            $(divid).html(curval)
+            curseqid += 1
+        }
+    }
+    else{
+        let ans = data["answer"][0]
+        let divid = "#"+ans+"ans"
+        $(divid).html("&#10004")
+
+    }
     $("#answerTitle").html(answerTitle)   
     if (data["id"] == 1){
         $("#playButton").addClass("hidden")
