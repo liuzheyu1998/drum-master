@@ -277,7 +277,7 @@ body{
     top: 280px;
     left: 90px;
     width: 80px;
-    z-index: 15;
+    z-index: 5;
     border-color: #0DCAF0;
     background-color: #0DCAF0;
     text-align: center;
@@ -288,7 +288,7 @@ body{
     top: 180px;
     left: 220px;
     width: 80px;
-    z-index: 15;
+    z-index: 5;
     border-color: #0DCAF0;
     background-color: #0DCAF0;
     text-align: center;
@@ -299,7 +299,7 @@ body{
     top: 280px;
     left: 600px;
     width: 80px;
-    z-index: 15;
+    z-index: 5;
     border-color: #0DCAF0;
     background-color: #0DCAF0;
     text-align: center;
@@ -310,7 +310,7 @@ body{
     top: 340px;
     left: 195px;
     width: 80px;
-    z-index: 15;
+    z-index: 5;
     border-color: #0DCAF0;
     background-color: #0DCAF0;
     text-align: center;
@@ -321,7 +321,7 @@ body{
     top: 240px;
     left: 310px;
     width: 80px;
-    z-index: 15;
+    z-index: 5;
     border-color: #0DCAF0;
     background-color: #0DCAF0;
     text-align: center;
@@ -332,7 +332,7 @@ body{
     top: 280px;
     left: 475px;
     width: 80px;
-    z-index: 15;
+    z-index: 5;
     border-color: #0DCAF0;
     background-color: #0DCAF0;
     text-align: center;
@@ -344,7 +344,7 @@ body{
     top: 490px;
     left: 560px;
     width: 80px;
-    z-index: 15;
+    z-index: 5;
     border-color: #0DCAF0;
     background-color: #0DCAF0;
     text-align: center;
@@ -356,7 +356,7 @@ body{
     top: 470px;
     left: 375px;
     width: 80px;
-    z-index: 15;
+    z-index: 5;
     border-color: #0DCAF0;
     background-color: #0DCAF0;
     text-align: center;
